@@ -1,0 +1,91 @@
+<app-header (receiveMessage)="receiveMessage($event)" [backgroundLight]=true [passedLanguage]=currentLanguage [routedFromHero]=true></app-header>
+<div class="project-detail-overlay">
+    <div class="project-detail-left-side">
+        <div class="project-left-side-box">
+            <div class="back-and-next-box">
+                <div class="go-back-box">
+                    <img src="./assets/lines/projects/Breadcrumb arrow 3.png" alt="">
+                    <div class="go-back-box-a" (click)="goBackToHeroSection(currentLanguage)">{{ backProjectDetails[currentLanguage] }}</div>
+                </div>
+            </div>
+            <div class="projects-headline-title">
+                @if(projectNumber == 0){
+                    {{ Data.projectTitles[projectNumber] }} 
+                    <div class="projects-details-line" style="background-size: 300px 20px"></div>}
+                @if(projectNumber == 1){
+                    {{ Data.projectTitles[projectNumber] }} 
+                    <div class="projects-details-line" style="background-size: 210px 20px"></div>}
+                @if(projectNumber == 2){
+                    {{ Data.projectTitles[projectNumber] }} 
+                    <div class="projects-details-line" style="background-size: 110px 20px"></div>}
+                @if(projectNumber == 3){
+                    <div class="bonus-headline-box">
+                        {{ Data.projectTitles[projectNumber] }} 
+                        <div class="bonus-headline">
+                            <img src="./assets/lines/projects/Next project arrow 3.png" alt="">
+                            <div class="bonus-letters">
+                                <div>BONUS!</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="projects-details-line" style="background-size: 300px 20px"></div>}
+
+            </div>
+            <div class="project-title-and-description-box">
+                <div class="project-title-and-description">
+                    <div class="project-title">
+                        {{ Data.descriptionTitle[currentLanguage] }}
+                    </div>
+                    <div class="project-description">
+                        {{ Data.projectDescription[projectNumber][currentLanguage] }}
+                    </div>
+                </div>
+                <div class="project-title-and-description">
+                    <div class="project-title">
+                        {{ Data.implementationTitle[currentLanguage] }}
+                    </div>
+                    <div class="project-description">
+                        {{ Data.implementationDetails[projectNumber][currentLanguage] }}
+                    </div>
+                </div>
+            </div>
+            <div class="project-skills">
+                @for( skill of Data.projectSkills[projectNumber]; track skill){
+                <div class="skill-box">
+                    <img src="./assets/icons/{{ skill }}.png" alt="">
+                    {{ skill }}
+                </div>
+                }   
+            </div>
+           
+        </div>
+    </div>
+    <div class="project-detail-right-side">
+        <div class="project-right-img-buttons">
+            <img class="project-screenshot-image" src="./assets/img/project-screenshots/{{ Data.projectScreenshots[projectNumber] }}.png" alt="">
+            <div class="sticker-box">
+                @if(projectNumber == 0){
+                    <app-sticker-button [stickerKind]=2></app-sticker-button>         
+                }
+                @else{
+                    <app-sticker-button></app-sticker-button>         
+                }
+            </div>
+            <div class="button-box">
+                <a href="{{ Data.projectGitLinks[projectNumber ]}}"><div class="project-button">GitHub</div></a>
+                <a href="{{ Data.projectLinks[projectNumber] }}"><div class="project-button">{{ testen[currentLanguage] }}</div></a>
+            </div>
+            <div class="next-project-arrow-box">
+                <div class="back-arrow">
+                    <img src="./assets/lines/projects/Breadcrumb arrow 3.png" alt="">
+                    <div class="back-arrow-a" (click)="goBackToHeroSection(currentLanguage)">Back</div>
+                </div>
+                <div class="next-arrow">
+                    <p (click)="nextProject()">{{ nextProjectDetails[currentLanguage] }}</p>
+                    <img src="./assets/lines/projects/Next project arrow 3.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 

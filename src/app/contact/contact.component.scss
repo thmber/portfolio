@@ -1,0 +1,379 @@
+@import './../abstracts/mixins.scss';
+@import './../abstracts/variables.scss';
+section:has(#name-input:hover) #mail-input {
+    border-top: 1px solid $accent2;
+}
+  section:has(#mail-input:hover) #name-input {
+    border-bottom: 1px solid transparent;
+}
+section:has(#subject-input:hover) #mail-input {
+    border-bottom: 1px solid transparent;
+}
+section{
+    width: 100vw;
+    max-width: 1440px;
+    background-position: -10px 0;
+    background-image: url(./../../assets/img/Footer.png);
+    background-size: cover;
+    @include flex(center, center);
+    position: relative;
+    .contact-left{
+        width: 50%;
+        margin-top: 120px;
+        margin-bottom: 60px;
+        color: white;
+        @include flex(center, flex-start);
+        .contact-left-box{
+            width: 70%;
+            @include flex(center, flex-start);
+            flex-direction: column;
+            .contact-subheadline{
+                @include subheadline1();
+                position: relative;
+            }
+            .contact-headline{
+                @include headline2();
+            }
+            .contact-text-box{
+                @include flex(center, flex-start);
+                flex-direction: column;
+                gap: 20px;
+                .contact-text{
+                    @include describingText();
+                }
+            }
+            .contact-section-line{
+                margin-top: 30px;
+                position: absolute;
+                background: url(./../../assets/lines/contact/contact-big-arrow.png);
+                width: 0;
+                color: transparent;
+                height: 50px;
+                background-position: 0 0;
+                background-size:  260px 50px;
+                bottom: 7%;
+                left: 25%;
+                animation: strokeLineHeadline2 2.5s infinite;
+            }
+        }
+    }
+    .contact-right{
+        width: 50%;
+        margin-top: 220px;
+        margin-bottom: 60px;
+        @include flex(flex-end, center);
+        .form-box{
+            @include flex(flex-start, center);
+            width: 90%;
+            form{
+                transition: all 225ms ease-in-out;
+                width: 100%;
+                .name-input{
+                    &:hover{
+                        border-top: 1px solid $accent2;
+                        border-bottom: 1px solid transparent;
+                    }
+                    .error-label{
+                        color: rgb(236, 110, 110)  !important;
+                    }
+                    .correct-label{
+                        color: $accent1 !important;
+                    }
+                    label{
+                        >img{
+                            width: 25px;
+                            height: 25px;
+                        }
+                    }
+                }
+                .mail-input{
+                    &:hover{
+                        border-top: 1px solid $accent2;
+                        border-bottom: 1px solid $accent2;
+                    }
+                    .error-label{
+                        color: rgb(236, 110, 110)  !important;
+                    }
+                     .correct-label{
+                        color: $accent1 !important;
+                    }
+                     label{
+                        >img{
+                            width: 25px;
+                            height: 25px;
+                        }
+                    }
+                }
+                .subject-input{
+                    &:hover{
+                        border-bottom: 1px solid $accent2;
+                        border-top: 1px solid $accent2;
+                    }
+                        .error-label{
+                        color: rgb(236, 110, 110)  !important;
+                    }
+                     .correct-label{
+                        color: $accent1 !important;
+                    }
+                     label{
+                        >img{
+                            width: 25px;
+                            height: 25px;
+                        }
+                    }
+
+                }
+               .input-box{
+                @include flex(center, center);
+                flex-direction: column;
+                width: 80%;
+                border-bottom: 1px solid $accent1;
+                border-top: 1px solid transparent;
+                &:hover label{
+                    color: $accent3;
+                }
+                input[type=submit]{
+                    width: 200px;
+                }
+                input{
+                    padding-left: 30px;
+                    background: transparent;
+                    box-shadow: none;
+                    outline: none;
+                    color: white;
+                    line-height: 30px;
+                    width: 100%;
+                    height: 40px;
+                    border: none;
+                    box-sizing: border-box;
+                    &::placeholder{
+                        color: white;
+                        font-family: bricolage;
+                        align-self: flex-start;
+                        font-size: 16px;
+                        font-family: bricolage-light;
+                    }
+                }
+                label{
+                    color: white;
+                    padding-left: 30px;
+                    font-family: bricolage;
+                    align-self: flex-start;
+                    font-size: 24px;
+                    margin-top: 20px;
+                }
+                }
+                .submit-box{
+                    width: 70%;
+                    @include flex(flex-end, center);
+                    .submit-b{
+                        @include defaultbuttonDesign(white);
+                        background: transparent;
+                        padding-left: 40px;
+                        padding-right: 40px;
+                        margin-top: 30px;
+                    }
+                    .submit-disabled{
+                        @include defaultbuttonDisabled();
+                        background: transparent;
+                        padding-left: 40px;
+                        padding-right: 40px;
+                        margin-top: 30px;
+                    }
+
+               }
+               .input-privacy{
+                    width: 70%;
+                    color: white;
+                    font-family: bricolage-light;
+                    font-size: 15px;
+                    @include flex(center, center);
+                    position: relative;
+                    margin-bottom: 10px;
+                    .container{
+                        display: block;
+                        position: relative;
+                        cursor: pointer;
+                        user-select: none;
+                        padding-left: 30px;
+                    }
+                    .container input{
+                        position: absolute;
+                        opacity: 0;
+                        cursor: pointer;
+                        height: 0;
+                        width: 0;
+                    }
+                    .checkbox-custom{
+                        position: absolute;
+                        top: 8px;
+                        left: 0;
+                        height: 16px;
+                        width: 16px;
+                        border: 2px solid $accent3;
+                        border-radius: 2px;
+                        &:hover{
+                            box-shadow: 0 0 12px $accent3;
+                            background-color: rgb(46, 64, 89);
+                        }
+                    }
+                    .container input:checked ~ .checkbox-custom {
+                        background: url(../../assets/lines/contact/checkmark.png);
+                      }
+                    .privacy-policy{
+                        padding-top: 30px;
+                        a{
+                            color: $accent3;
+                            &:hover{
+                                color: $accent1;
+                                cursor: pointer;
+                            }
+                        }
+                        }
+               }
+                .privacy-error{
+                      font-size: 14px;
+                      padding-left: 30px;
+                }
+            }
+        }
+    }
+    .sticker-box{
+        position: absolute;
+        right: 22%;
+        top: 16%;
+        transform: scale(1.2);
+    }
+}
+.mail-sent{
+    width: 100% !important;
+    background-image: none !important;
+    color: $accent1 !important;
+    font-size: 22px;
+    @include flex (flex-start, center);
+    transition: all 225ms ease-in-out;
+}
+.visible{
+    color: rgb(236, 110, 110);
+}
+.invisible{
+    color: transparent;
+}
+@media only screen and (max-width: 1200px) {
+    section{
+        .contact-left{
+            .contact-left-box{
+                .contact-headline{
+                    font-size: 45px;
+                }
+                .contact-section-line{
+                    left: 200px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 950px) {
+    section{
+        flex-direction: column;
+        justify-content: flex-start;
+        .contact-left{
+            width: 90%;
+            margin-top: 150px;
+            margin-bottom: 40px;
+            .contact-left-box{
+                width: 80%;
+                .contact-section-line{
+                   left: 18%;
+                   bottom: 5%;
+                }
+                .contact-headline{
+                    font-size: 54px;
+                }
+            }
+        }
+        .contact-right{
+            width: 90% !important;
+            margin-top: 100px;
+            @include flex(center, flex-start);
+            .form-box{
+                width: 80%;
+                .submit-box{
+                    margin-top: 40px;
+                    width: 90% !important;
+                }
+            }
+        }
+        .sticker-box{
+            top: 47%;
+            right: 35%;
+        }
+    }
+}
+@media only screen and (max-width: 650px) {
+    section{
+        .contact-left{
+            .contact-left-box{
+                width: 100%;
+                .contact-section-line{
+                    height: 40px;
+                    background-size: 180px 40px;
+                    animation: strokeLineHeadline2smaller 2.5s infinite;
+                    bottom: 5%;
+                    left: 17%;
+                }
+            }
+        }
+        .contact-right{
+            .form-box{
+                width: 100%;
+                .submit-box{
+                    margin-top: 0;
+                }
+                form{
+                    .name-input{
+                        width: 100%;
+                    }
+                    .mail-input{
+                        width: 100%;
+                    }
+                    .subject-input{
+                        width: 100%;
+                    }
+                    .input-privacy{
+                        width: 90%;
+                    }
+                }
+            }            
+        }
+        .sticker-box{
+            transform: scale(1);
+            top: 50%;
+            right: 42%;
+        }
+    }
+}
+@media only screen and (max-width: 550px) {
+    section{
+        .contact-right{
+            .form-box{
+                .submit-box{
+                    width: 100% !important;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 470px) {
+    section{
+        .contact-left{
+            .contact-left-box{
+                .contact-section-line{
+                    background-size: 150px 40px;
+                    animation: strokeLineHeadline2evensmaller 2.5s infinite;
+                    left: 10%;
+                }
+            }
+        }
+    }
+}

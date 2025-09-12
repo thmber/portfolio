@@ -1,0 +1,228 @@
+@import './../abstracts/mixins.scss';
+@import './../abstracts/variables.scss';
+section{
+    font-family: bricolage;
+    @include flex(center, center);
+    width: 100vw;
+    height: 100vh;
+    background: url(./../../assets/img/bg1.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    max-width: 1440px;
+    color: white;
+    .title-box{
+        margin-top: 50px;
+        @include flex(center, center);
+        flex-direction: column;
+        width: 70%;
+        .hello-world-box{
+            width: 100%;
+            @include flex(center, flex-start);
+            flex-direction: column;
+            gap: 10px;
+                .hello-world{
+                    border: 1px solid white;
+                    border-radius: 25px;
+                    font-size: 20px;
+                    padding-top: 7px;
+                    padding-bottom: 7px;
+                    padding-right: 15px;
+                    padding-left: 15px;
+                    @include flex(center, center);
+                    cursor: pointer;
+                    background-image: linear-gradient($accent2, $accent2);
+                    background-position: 50% 50%; 
+                    background-repeat: no-repeat;
+                    background-size: 0% 100%;
+                    transition: all 225ms ease-in-out;
+                    &:hover{
+                        background-size: 100% 100%;
+                    }
+                    &:hover .wave-image{
+                        opacity: 1 !important;
+                        transform: translate(105px, -32px) rotate(0) !important;
+                    }
+                    .hello-wave{
+                        position: absolute;
+                        width: 24px;
+                        .wave-image{
+                            width: 32px;
+                            transform: translate(70px, -32px) rotate(-180deg);
+                            transition: all 225ms ease-in-out;
+                            opacity: 0;
+                        }
+                    }
+                }
+        }
+    .get-in-touch-box{
+        width: 100%;
+        @include flex(center, flex-end);
+        flex-direction: column;
+        .hero-image-box{
+            transform: translate(100px, -250px) rotate(8deg);
+            background-color: white;
+            @include flex(center, center);
+            flex-direction: column;
+            width: 230px;
+            height: 280px;
+            position: absolute;
+            color: black;
+            font-family: Kalam;
+            background-image: url(./../../assets/img/Polaroid\ Frame.png);
+            background-size: cover;
+            gap: 10px;
+            font-size: 20px;
+            &:hover{
+                transform: translate(100px, -250px) rotate(7.7deg);
+            }
+            img{
+                width: 200px;
+                height: 200px;
+                filter: grayscale(1);
+                transition: all 125ms ease-in-out;
+
+            }
+            .show-colors{
+                filter: grayscale(0);
+            }
+        }
+        .get-in-touch-under-image{
+                @include flex(center, flex-end);
+                flex-direction: column;
+                gap: 10px;
+                .get-in-touch{
+                    @include defaultbuttonDesign(white);
+                }   
+        }
+    }
+    }
+}
+.title-developer{
+    @include flex(center, center);
+    font-family: bricolage-bold;
+    font-size: 11em;
+    .title-letter{
+        transition: all 225ms ease-in-out;
+        &:hover{
+            color: $accent1;
+        }
+    }
+}
+.header-contact{
+    position: absolute;
+    top: 66%;
+    left: 20%;
+    .header-contact-box{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .header-contact-icon{
+            border: 1px solid white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            padding: 6px;
+            transition: all 125ms ease-in-out;
+            cursor: pointer;
+            &:hover{
+                background-color: $accent2;
+            }
+            &:hover img{
+                transform: scale(0.92) rotate(360deg);
+            }
+            >img{
+                width: 28px;
+                transition: all 125ms ease-in-out;
+            }
+        }
+    }  
+}
+
+@media only screen and (max-width: 1440px) {
+    section{
+        .header-contact{
+            left: 10%;
+        }
+        .title-developer{
+            font-size: 8em;
+        }
+    }
+}
+@media only screen and (max-width: 1200px) {
+    section{
+        .title-box{
+            width: 60%;
+        }
+    }
+}
+
+@media only screen and (max-width: 1180px) {
+    .hero-image-box{
+        transform: translate(160px, -250px) rotate(8deg) !important;
+    }
+    .title-developer{
+        font-size: 7em !important;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .title-developer{
+        font-size: 5em !important; 
+    }
+    .hero-image-box{
+        height: 240px !important;
+        width: 200px !important;
+        transform: translate(50px, -210px) rotate(8deg) !important;
+        img{
+            width: 160px !important;
+            height: 160px !important;
+        }
+    }
+}
+@media only screen and (max-width: 850px) {
+    .hero-image-box{
+        transform: translate(-200px, 180px) rotate(8deg) !important;
+    }
+    section{
+        align-items: flex-start !important;
+        .title-box{
+            margin-top: 132px;
+            width: 80% !important;
+            z-index: 1;
+        }
+        .header-contact{
+            display: none;
+        }
+    }
+}
+@media only screen and (max-width: 600px) {
+    .title-developer{
+        font-size: 4.5em;
+    }
+    .hero-image-box{
+        transform: translate(-180px, 180px) rotate(8deg) !important;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .title-developer{
+        font-size: 3.8em;
+    }
+    .hero-image-box{
+        transform: translate(-100px, 220px) rotate(8deg) !important;
+    }
+}
+@media only screen and (max-width: 420px) {
+    .title-developer{
+        font-size: 3.2em !important;
+    }
+    section{
+        .title-box{
+            width: 70% !important;
+        }
+    }
+    .hero-image-box{
+        transform: translate(-50px, 220px) rotate(8deg) !important;
+    }
+}

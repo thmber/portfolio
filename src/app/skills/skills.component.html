@@ -1,0 +1,54 @@
+<section>
+    <div class="headline-skills-box">
+        <div class="headline-skills">
+            <div class="subheadline-skills">{{ myStack[currentLanguage] }}</div>
+            @if(currentLanguage == 0){
+                <div class="big-headline-skills">Skills</div>
+                <div class="skills-line skills-line-german"></div>
+            }
+            @else{
+                <div class="big-headline-skills">Skill Set</div>
+                <div class="skills-line skills-line-english"></div>
+            }
+        </div>
+    </div>
+    <div class="skills-box">
+        <div class="paper-skills">
+            {{ skillsText[currentLanguage] }}
+        </div>
+        <div class="all-skills-box">
+            @for(skill of ['html', 'css', 'javascript', 'typescript', 'angular', 'git', 'rest-api', 'firebase','scrum','material design']; track skill){
+                <div class="skill-icon">
+                    <img src="./assets/icons/{{skill}}.png" alt="">
+                    <p>{{skill}}</p>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="pull-image-box">
+        <div class="pull-image" (click)="pullSticker()">
+            <img src="./assets/stickers/pull/{{ stickerMode }}.png" alt="">
+            @if(stickerMode == 0){
+                <div class="pull-text">
+                    <img src="./assets/icons/arrow-sticker.png" alt="">
+                    {{ pullMessage[currentLanguage] }}
+                </div>
+            }
+            @if(stickerMode == 2){
+                <div class="pull-also-interested">
+                    {{ alsoInterested[currentLanguage] }}
+                    <div class="pull-box">
+                        <div class="also-interested-icon">
+                            <img src="./assets/icons/react.png" alt="">
+                            react
+                        </div>
+                        <div class="also-interested-icon">
+                            <img src="./assets/icons/vue.png" alt="">
+                            vue js
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

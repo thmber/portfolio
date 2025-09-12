@@ -1,0 +1,41 @@
+@if(stickerKind == 1){
+    <div class="logo-button" style="background: url(./assets/stickers/sticker_round_{{stickerColor}}.png); background-size: 150px 150px;">
+        <div class="logo-logo-letter">
+            <div class="logo-T">T</div>
+            <div class="logo-M">M</div>
+        </div>
+        @for (degrees of logoButtonDegreesTop; track degrees; let indexDegrees = $index){
+            @for(degree of degrees; track degree; let i = $index){
+                <div class="round-letter" [ngStyle]="{'rotate.deg': degree}">{{ logoButtonLetters[indexDegrees][i] }}</div>
+            }
+        }
+        @for (degrees of logoButtonDegreesBottom; track degrees; let indexDegrees = $index){
+            @for(degree of degrees; track degree; let i = $index){
+                <div class="round-letter" [ngStyle]="{'rotate.deg': degree}">{{ logoButtonLetters[indexDegrees][i] }}</div>
+            }
+        }
+    </div>
+}
+@if(stickerKind == 2){
+    <div class="sticker-button">
+        <img src="./assets/stickers/arrow_round_sticker.png" alt="">
+    
+        @for(degree of [-73, -64, -54, -45, -36, -27, -19, -9]; track degree; let i = $index){
+            <div class="round-letter" [ngStyle]="{'rotate.deg': degree}">{{ featuredButtonLetters[0][i] }}</div>
+        }
+        @for(degree of [9, 18, 27, 36, 45, 54, 63]; track degree; let i = $index){
+            <div class="round-letter" [ngStyle]="{'rotate.deg': degree}">{{ featuredButtonLetters[1][i] }}</div>
+        }
+    
+        @for(degree of [63,53,44,35,27]; track degree; let i = $index){
+            <div class="round-letter-bottom" [ngStyle]="{'rotate.deg': degree}">{{ featuredButtonLetters[2][i] }}</div>
+        }
+        @for(degree of [9, 3, -1]; track degree; let i = $index){
+            <div class="round-letter-bottom" [ngStyle]="{'rotate.deg': degree}">{{ featuredButtonLetters[3][i] }}</div>
+        }
+        @for(degree of [-15, -24, -32, -39, -46, -51, -58]; track degree; let i = $index){
+            <div class="round-letter-bottom" [ngStyle]="{'rotate.deg': degree}">{{ featuredButtonLetters[4][i] }}</div>
+        }
+    </div>
+}
+

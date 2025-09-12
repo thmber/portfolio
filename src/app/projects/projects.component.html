@@ -1,0 +1,64 @@
+<section>
+    <div class="projects-left-side">
+        <div class="projects-left-subbox">
+            <div class="projects-subheadline">
+                {{ craft[currentLanguage] }}
+            </div>
+            <div class="headline-box">
+                <div class="projects-headline">
+                    {{  projectHeadlines[currentLanguage]  }}
+                </div>
+                <div class="projects-line"></div>
+            </div>
+            <div class="projects-text">
+                {{ projectHeadlineText[currentLanguage] }}
+            </div>
+            <div class="projects-text">
+                {{ bonus[currentLanguage] }}
+            </div>
+        </div>
+    </div>
+    <div class="projects-right-side" id="project-0">
+        <div class="projects-right-subbox">
+            <div class="projects-imagebox flow-image  project-img-0">
+                <div class="layer-image" (click)="goToProjectDetail(0, currentLanguage)">
+                    <div class="project-button">{{ projectDetails[currentLanguage] }}</div>
+                </div>
+            </div>
+            <div class="project-description">
+                <div class="project-title-box">
+                    <div class="project-title">Wizard's King</div>
+                </div>
+                <div class="projects-text">
+                    {{ projectDescription[0][currentLanguage]  }}
+                </div>
+            </div>
+        </div>
+        <div class="featured">
+        </div>
+    </div>
+    <app-sticker-button [stickerKind]=2 class="sticker-position"></app-sticker-button>
+</section>
+<section>
+    @for(project of [1, 2]; track project){
+        <div class="projects-right-side" id="project-{{project}}">
+            <div class="projects-right-subbox">
+                <div class="projects-imagebox project-img-{{project}}">
+                    <div class="layer-image" (click)="goToProjectDetail(project, currentLanguage)">
+                        <div class="project-button">{{ projectDetails[currentLanguage] }}</div>
+                    </div>
+                </div>
+                <div class="project-description">
+                    <div class="project-title-box">
+                        <div class="project-title">{{ projectTitles[project]}}</div>
+                    </div>
+                    <div class="projects-text">
+                        {{ projectDescription[project][currentLanguage] }}
+                    </div>
+                </div>
+            </div>
+            <div class="featured">
+            </div>
+     </div>
+    }
+</section>

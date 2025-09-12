@@ -1,0 +1,381 @@
+@import './../abstracts/mixins.scss';
+@import './../abstracts/variables.scss';
+@mixin projecttitle (){
+    font-size: 22px;
+    font-family: bricolage-bold;
+    margin-bottom: 5px;
+    margin-top: 20px;
+}
+@mixin buttonMargin(){
+    margin-bottom: 30px;
+    margin-right: 30px;
+}
+.project-detail-overlay{
+    height: 100vh;
+    width: 100vw;
+    max-width: 1440px;
+    background-color: rgb(0, 0, 0, 0.9);
+    background-image: url(./../../assets/img/Note\ book\ paper.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include flex(center, center);
+    .project-detail-left-side{
+        width: 50%;
+        margin-left: 80px;
+        .project-left-side-box{
+            @include flex(center,flex-start);
+            flex-direction: column;
+            margin-top: 70px;
+            width: 80%;
+            .back-and-next-box{
+                @include flex(space-between, center);
+                width: 32%;
+                position: absolute;
+                top: 100px;
+                .go-back-box{
+                    font-size: 18px;
+                    @include flex(center, center);
+                    font-family: bricolage-bold;
+                    gap: 10px;
+                    cursor: pointer;
+                }
+                .go-back-box-a{
+                    @include flex(center,center);
+                    gap: 20px;
+                    color: black;
+                    &:hover{
+                        color: $accent3;
+                    }
+                }
+                .go-back-box img{
+                    width: 40px;
+                }
+            }
+            .projects-headline-title{
+                position: relative;
+                @include headline2();
+                .bonus-headline-box{
+                    display: flex;
+                    align-items: center;
+                    gap: 25px;
+                    .bonus-headline{
+                        color: $accent1;
+                        font-size: 42px;
+                        display: flex;
+                        gap: 10px;
+                        align-items: center;
+                        >img{
+                            width: 40px;
+                        }
+                        .bonus-letters{
+                            display: flex;
+                        }
+                    }
+                }
+                .projects-details-line{
+                    width: 0;
+                    height: 20px;
+                    position: absolute;
+                    background: url(./../../assets/lines/aboutme/about-me-line.png);
+                    background-position: 0 0;
+                    background-repeat: no-repeat;
+                    transition: all 225ms ease-in-out;
+                    animation: showLine 2.5s infinite;
+                }
+            }
+            .project-title-and-description-box{
+                @include flex(center, flex-start);
+                flex-direction: column;
+                gap: 20px;
+                .project-title-and-description{
+                    @include flex(center, flex-start);
+                    flex-direction: column;
+    
+                    .project-title{
+                        @include projecttitle();
+                        margin-bottom: 20px;
+                    }
+                    .project-description{
+                        font-size: 18px;
+                        font-family: bricolage-light;
+                        text-align: justify;
+                    }
+                }
+            }
+            .project-skills{
+                margin-top: 20px;
+                gap: 5px;
+                flex-wrap: wrap;
+                @include flex(center, center);
+                .skill-box{
+                    gap: 2px;
+                    @include flex(center, center);
+                    font-family: bricolage-light;
+
+                }
+                .skill-box img{
+                    width: 32px;
+                    transition: all 125ms ease-in-out;
+                    &:hover{
+                        transform: rotate(360deg);
+                    }
+                }
+            }
+            
+        }
+    }
+    .project-detail-right-side{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 120px;
+        .project-right-img-buttons{
+            .sticker-box{
+                position: absolute;
+                right: 28%;
+                top: 20%;
+            }
+            width: 100%;
+            position: relative;
+            @include flex(center, center);
+            flex-direction: column;
+            >img{
+                width: 550px;
+                height: 420px;
+                border-radius: 20px;
+                object-fit: cover;
+            }
+            .button-box{
+                margin-top: 20px;
+                width: 550px;
+                @include flex(flex-end, center);
+                .project-button{
+                    margin-left: 30px;
+                    @include defaultbuttonDesign(white);  
+                }
+            }
+            .next-project-arrow-box{
+                @include flex(flex-end, center);
+                width: 550px;
+                margin-top: 40px;
+                font-family: bricolage-bold;
+                font-size: 18px;
+                .back-arrow, .next-arrow{
+                    gap: 10px;
+                    width: 90px;
+                    @include flex (space-between, center);
+                    .back-arrow-a{
+                        color: black;
+                        cursor: pointer;
+                        &:hover{
+                            color: $accent3;
+                        }
+                    }
+                }
+                .back-arrow img, .next-arrow img{
+                    width: 40px;
+                }
+                .next-arrow p{
+                    color: white;
+                    cursor: pointer;
+                    &:hover{
+                        color: $accent1;
+                    }
+                }
+                .back-arrow{
+                    display: none;
+                }
+
+            }
+        }
+    }
+}
+@keyframes showLine {
+    0%{width: 0;}
+    20%{width: 120%;}
+    100%{width: 120%;}
+}
+@keyframes showImage{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+@media only screen and (max-width: 1200px) {
+    .project-detail-overlay{
+        .project-detail-left-side{            
+            .project-left-side-box{
+                width: 90%;
+                .projects-headline-title{
+                    font-size: 50px;
+                    .bonus-headline-box{
+                        .bonus-headline{
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+        }
+        .project-detail-right-side{
+            .project-right-img-buttons{
+                .sticker-box{
+                    transform: scale(0.8);
+                }
+                >img{
+                    width: 430px;
+                    height: 350px;
+                .next-project-arrow-box{
+                    width: 430px;
+                }
+                }
+                .button-box{
+                    width: 430px;
+                }
+                .next-project-arrow-box{
+                    width: 430px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 950px) {
+    .project-detail-overlay{
+        .project-detail-left-side{
+            .project-left-side-box{
+                .projects-headline-title{
+                    font-size: 36px;
+                }
+            }
+        }
+        .project-detail-right-side{
+            .project-right-img-buttons{
+                .sticker-box{
+                    transform: scale(0.7);
+                }
+                .next-project-arrow-box{
+                    width: 360px;
+                }
+                >img{
+                    width: 360px;
+                    height: 300px;
+                }
+                .button-box{
+                    width: 360px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 850px) {
+    .project-detail-overlay{
+        height: 160vh;
+        flex-direction: column;
+        background-image: url(../../assets/img/Note\ book\ paper_rotated.png);
+        .project-detail-left-side{
+            display: flex;
+            justify-content: center;
+            width: 90%;
+            margin-left: 0;
+            .project-left-side-box{
+                .back-and-next-box{
+                    display: none;
+                 }
+                .projects-headline-title{
+                    font-size:50px;
+                }
+            }
+        }
+        .project-detail-right-side{
+            width: 90%;
+            margin-top: 60px;
+            .project-right-img-buttons{
+                .sticker-box{
+                    transform: scale(1.1);
+                    right: 20%;
+                }
+                width: 90%;
+                >img{
+                    width: 80vw;
+                    height: 60vw;
+                }
+                .button-box{
+                    width: 100%;
+                }
+                .next-project-arrow-box{
+                    width: 100%;
+                    justify-content: space-between;
+                    .back-arrow{
+                        display: flex;
+                        color: white;
+                        .back-arrow-a{
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 650px) {
+    .project-detail-overlay{
+        height: 150vh;
+        .project-detail-right-side{
+            .project-right-img-buttons{
+                .sticker-box{
+                    transform: scale(0.9);
+                    right: 21%;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 520px) {
+    .project-detail-overlay{
+        .project-detail-left-side{
+            .project-left-side-box{
+                .projects-headline-title{
+                    font-size: 40px;
+                }
+                .projects-headline-title{
+                    .bonus-headline-box{
+                        .bonus-headline{
+                            font-size: 20px;
+                            >img{
+                                width: 24px;
+                            }
+                        }
+                    }
+                    .projects-details-line{
+                        width: 0;
+                        height: 20px;
+                        position: absolute;
+                        background: url(./../../assets/lines/aboutme/about-me-line.png);
+                        background-position: 0 0;
+                        background-repeat: no-repeat;
+                        transition: all 225ms ease-in-out;
+                        animation: showLine 2.5s infinite;
+                    }
+                }
+            }
+        }
+        .project-detail-right-side{
+            .project-right-img-buttons{
+                .sticker-box{
+                    transform: scale(0.7);
+                    right: 24%;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 400px) {
+    .project-detail-overlay{
+        .project-detail-right-side{
+            .project-right-img-buttons{
+                .sticker-box{
+                    transform: scale(0.6);
+                    right: 24%;
+                }
+            }
+        }
+    }
+}

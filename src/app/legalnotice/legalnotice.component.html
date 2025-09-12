@@ -1,0 +1,33 @@
+<app-header [passedLanguage]=currentLanguage (receiveMessage)="receiveMessage($event)" [routedFromHero]=true></app-header>
+<section>
+    <div class="legal-box">
+        <div class="headline-legal">
+            <div>{{ headline1[currentLanguage] }}</div>
+            <div class="cancel-legal-box">
+                <div class="cancel-legal" (click)="goBackToHeroSection(currentLanguage)">{{ backArrow[currentLanguage] }}</div>
+                <img src="./assets/lines/projects/Breadcrumb arrow 3.png" alt="" class="arrow-back-legal">
+            </div>
+        </div>
+        <div class="subheadline-legal">{{ imprint[currentLanguage] }}</div>
+        <div class="legal-text">&bull; Thomas Mahler <br>&bull; Weserstraße 191 <br>&bull; 12045 Berlin</div>
+        <div class="subheadline-legal">{{ exploringBoard[currentLanguage] }}</div>
+        <div class="legal-text">Email: thmahler(at)gmx.net</div>
+        <div class="subheadline-legal">{{ termsTitle[currentLanguage] }}</div>
+        <div class="legal-text">{{ terms[currentLanguage] }}</div>
+        <div class="subheadline-legal">{{ scopeTitle[currentLanguage] }}</div>
+        <div class="legal-text">
+            {{ scope[currentLanguage][0] }}
+            <br>
+            {{ scope[currentLanguage][1] }}
+        </div>
+        <div class="subheadline-legal">{{ propriTitle[currentLanguage]}}</div>
+        <div class="legal-text">{{ propri[currentLanguage] }}</div>
+        <div class="subheadline-legal">{{ useTitle[currentLanguage] }}</div>
+        <div class="legal-text">{{ use[currentLanguage] }}</div>
+        <div class="subheadline-legal">{{ disclaimerTitle[currentLanguage] }}</div>
+        <div class="legal-text">{{ disclaimer[currentLanguage] }}</div>
+        <div class="subheadline-legal">{{ indemnTitle[currentLanguage] }}</div>
+        <div class="legal-text">{{ indemn[currentLanguage] }}</div>
+    </div>
+</section>
+<app-footer [lightModus]=true [currentLanguage]=currentLanguage></app-footer>

@@ -1,0 +1,75 @@
+@import './../abstracts/mixins.scss';
+@import './../abstracts/variables.scss';
+.logo-button{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: absolute;
+    background-position: 0 0;
+    background-size: 150px 150px;
+    @include flex(center, flex-start);
+    &:hover{
+        transform: rotate(-8deg);
+    }
+    .logo-logo-letter{
+        @include flex(center,center);
+        font-size: 50px;
+        position: absolute;
+        color: rgb(0, 0, 0,0.9);
+        top: 31%;
+        left: 26%;
+        font-family: typewriter;
+        transform: rotate(22deg);
+        .logo-M{
+            transform: translate(-13px);
+        }
+    }
+    .round-letter{
+        height: 145px;
+        padding-top: 3px;
+        font-size: 11px;
+        color: rgb(0, 0, 0,0.6);
+        position: absolute;
+        font-family: bricolage-bold;
+
+    }
+}
+.sticker-button{
+    color: white;
+    background: url(./../../assets/stickers/sticker_round_2.png);
+    width: 150px;
+    height: 150px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    @include flex(center, flex-start);
+    >img{
+        width: 120px;
+        position: absolute;
+        top: 45px;
+        left: 26px;
+    }
+    &:hover{
+        transform: rotate(-4deg);
+    }
+    .round-letter{
+        position: absolute;
+        font-family: bricolage-bold;
+        height: 150px;
+        font-size: 18px;
+    }
+    .round-letter-bottom{
+        position: absolute;
+        padding-top: 126px;
+        font-family: bricolage;
+        font-size: 18px;
+    }
+}
+.sticker-bonus{
+    font-size: 28px !important;
+    transform: rotate(0) !important;
+    color: white !important;
+}

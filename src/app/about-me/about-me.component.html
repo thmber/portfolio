@@ -1,0 +1,46 @@
+<section>
+    <div class="ripped-papers-box">
+        <div class="left-side">
+            <div class="paper-1" [ngClass]="{'paper-1-moving': papersMoving == true}">
+                <img src="./assets/icons/locaion_1.png" alt="">
+                <p>{{ paper1Text[currentLanguage] }}</p>
+            </div>
+            <div class="paper-2" [ngClass]="{'paper-2-moving': papersMoving == true}">
+                <img src="./assets/icons/locaion_2.png" alt="">
+                <p>{{ paper2Text[currentLanguage] }}</p>
+            </div>
+            <div class="paper-3" [ngClass]="{'paper-3-moving': papersMoving == true}">
+                <img src="./assets/icons/locaion_3.png" alt="">
+                <p>{{ paper3Text[currentLanguage] }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-me-box">
+        <div class="subtitle-box">
+            <div class="subtitle-about-me">
+                {{ subHeadline[currentLanguage]}}
+            </div>
+        </div>
+        <div class="title-aboutme">
+            {{ headline[currentLanguage] }}
+            <div class="title-aboutme-line"></div>
+        </div>
+       <div class="aboutmetext-box">
+            <div class="text-about-me">
+                {{ aboutMeText[currentLanguage] }}
+            </div>
+            <div class="text-about-me2">
+                {{ aboutMeText2[currentLanguage] }}
+            </div>
+       </div>
+        <div class="letstalk-box">
+
+            <!-- When the button is clicked, tha papers are moved slightly -->
+            
+            <div class="lets-talk-button" (mouseenter)="movePapers()" (mouseleave)="doNotMovePapers()">
+               <a href="#contact-section"> {{ buttonText[currentLanguage] }}</a>
+            </div>
+        </div>
+    </div>
+</section>

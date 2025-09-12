@@ -1,0 +1,92 @@
+@import './../abstracts/mixins.scss';
+@import './../abstracts/variables.scss';
+section{
+    font-family: bricolage;
+    @include flex(center, flex-start);
+    width: 100vw;
+    background: url(./../../assets/img/03_Skills.png);
+    background-size: 100vw 500px;
+    background-repeat: no-repeat;
+    background-position: 0 -160px;
+    max-width: 1440px;
+    background-color: white;
+    .legal-box{
+        @include flex(center, flex-start);
+        flex-direction: column;
+        margin-top: 160px;
+        margin-bottom: 100px;
+        width: 85%;
+        .headline-legal{
+            @include headline2();
+            margin-bottom: 100px;
+            @include flex(space-between, center);
+            color: white;
+            width:100%;
+            .cancel-legal-box{
+                @include flex(flex-end, center);
+                gap: 5px;
+                width: 20%;
+                .arrow-back-legal{
+                    width: 40px;
+                    transform: rotate(180deg);
+                }
+                .cancel-legal{
+                    cursor: pointer;
+                    font-size: 18px;
+                    &:hover{
+                        color: $accent3;
+                        transform: scale(1.1);
+                    }
+                }
+            }
+         
+        }
+        .subheadline-legal{
+            margin-top: 25px;
+            margin-bottom: 5px;
+            color: $accent2;
+            font-size: 22px;
+            font-weight: 600;
+        }
+        .legal-text{
+            font-size: 18px;
+            color: black;
+        }
+    }
+}
+@media only screen and (max-width: 600px) {
+    section{
+        .legal-box{
+            .headline-legal{
+                font-size: 52px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 500px) {
+    section{
+        .legal-box{
+            margin-top: 140px;
+            .headline-legal{
+                font-size: 40px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 450px) {
+    section{
+        .legal-box{
+            .headline-legal{
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+                .cancel-legal-box{
+                    flex-direction: row-reverse;
+                    .arrow-back-legal{
+                        transform: rotate(0);
+                    }
+                }
+            }
+        }
+    }
+}

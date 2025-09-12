@@ -1,0 +1,155 @@
+<section>
+    <div class="header-with-burger-menu" [ngClass]="{'gradient-background': backgroundLight == true}">
+        <div class="header-with-burger-menu-box">
+            <div class="header-logo-box" >
+                <a href="#hero-section">
+                    <div class="logo-box" (mouseenter)="changeLetter()" [ngClass]="{'darker-color': backgroundLight == true}">
+                        <p class="logo-t" id="header-logo-t">{{ logoLetter1 }}</p>
+                        <p class="logo-m" id="header-logo-m"> {{ logoLetter2 }}</p>
+                    </div>
+                </a>
+           </div>
+           <div class="burgermenu-box" (click)="openBurgerMenu()" (touchstart)="showDrawing()" (touchend)="doNotShowDrawing()">                    
+                    <div class="burgerline line1" [ngClass]="{'line1tocross': burgerMenuOpen == true}"></div>
+                    <div class="burgerline line2" [ngClass]="{'disappeared': burgerMenuOpen == true}"></div>
+                    <div class="burgerline line3"[ngClass]="{'line3tocross': burgerMenuOpen == true}"></div>
+                    @if(drawingShown && burgerMenuOpen == false){
+                        <img class="drawing-burger" src="./assets/img/mobil/02_Color OP 3 While pressing 2.png" alt="">
+                    }
+                    @if(drawingShown && burgerMenuOpen == true){
+                        <img class="drawing-burger" src="./assets/img/mobil/02_Color OP 3 While pressing 1.png" alt="">
+                    }
+            </div>
+        </div>
+    </div>
+    <div class="overlay-gradient"></div>
+    <div class="header-box" [ngClass]="{'gradient-background': backgroundLight == true}">
+       <div class="header-main-box">
+        <div class="header-main" id="header-main" [ngClass]="{'header-main-burger': burgerMenuOpen == true}">
+            <div class="header-logo-box" [ngClass]="{'header-logo-box-burger': burgerMenuOpen == true}" >
+                 <a href="#hero-section">
+                     <div class="logo-box" (mouseenter)="changeLetter()" [ngClass]="{'darker-color': backgroundLight == true}">
+                         <p class="logo-t" id="header-logo-t">{{ logoLetter1 }}</p>
+                         <p class="logo-m" id="header-logo-m"> {{ logoLetter2 }}</p>
+                     </div>
+                 </a>
+            </div>
+             <div class="header-withoutlogo-box" [ngClass]="{'header-withoutlogo-box-burger': burgerMenuOpen == true}">
+                 <div class="aboutme" >
+                     <a href="#" [ngClass]="{'black': backgroundLight == true}">{{ aboutMe[currentLanguage] }}</a>
+                     <a href="#about-me-section"><div class="aboutme-line"></div></a>
+                 </div>
+                 <div class="skills">
+                     <a href="#" [ngClass]="{'black': backgroundLight == true}">Skills</a>
+                     <a href="#skills-section"><div class="skills-line"></div></a>
+                 </div>
+                 <div class="projects">
+                     <a href="#">{{ projects[currentLanguage] }}</a>
+                     <a href="#projects-section"><div class="projects-line"></div></a>
+                 </div>
+                 <div class="contact">
+                     <a href="#">{{ contact[currentLanguage] }}</a>
+                     <a href="#contact-section"><div class="contact-line"></div></a>
+                 </div>
+                 <div class="language-box">
+                     @if(currentLanguage == 1){
+                         <div class="de-box" (click)="changeLanguage(); passData()">
+                             DE
+                             <div class="de-line"></div>
+                         </div>
+                     }
+                     @else{
+                         <div class="selected">DE</div>
+                     }
+                     <div class="shift-box">
+                         <div class="shift-line">
+                         </div>
+                         <div class="shift-circle" [ngClass]="{'ruler-selected': currentLanguage == 1}">
+                         </div>
+                     </div>
+                     @if(currentLanguage == 0){
+                         <div class="en-box" (click)="changeLanguage(); passData()">
+                             <div class="en-line">
+                             </div>
+                             <div class="en-cover">
+                             </div>
+                             <div class="en-letters pointer">EN</div>
+                         </div>
+                     }
+                     @else{
+                         <div class="selected">EN</div>
+                     }
+                 </div>
+             </div>
+         </div>
+       </div>
+    </div>
+    <div class="burger-menu-overlay" [ngClass]="{'moved-in': burgerMenuOpen == true, 'hidden-top': backgroundLight == false, 'hidden-left': backgroundLight == true}">
+        <div class="header-logo-box" >
+            <a href="#hero-section">
+                <div class="logo-box" (mouseenter)="changeLetter()">
+                    <p class="logo-t" id="header-logo-t">{{ logoLetter1 }}</p>
+                    <p class="logo-m" id="header-logo-m"> {{ logoLetter2 }}</p>
+                </div>
+            </a>
+       </div>
+        <div class="aboutme" >
+            <a href="#">{{ aboutMe[currentLanguage] }}</a>
+            <a href="#about-me-section"><div class="aboutme-line"></div></a>
+        </div>
+        <div class="skills">
+            <a href="#">Skills</a>
+            <a href="#skills-section"><div class="skills-line"></div></a>
+        </div>
+        <div class="projects">
+            <a href="#">{{ projects[currentLanguage] }}</a>
+            <a href="#projects-section"><div class="projects-line"></div></a>
+        </div>
+        <div class="contact">
+            <a href="#">{{ contact[currentLanguage] }}</a>
+            <a href="#contact-section"><div class="contact-line"></div></a>
+        </div>
+        <div class="language-box">
+            @if(currentLanguage == 1){
+                <div class="de-box" (click)="changeLanguage(); passData()">
+                    DE
+                    <div class="de-line"></div>
+                </div>
+            }
+            @else{
+                <div class="selected">DE</div>
+            }
+            <div class="shift-box">
+                <div class="shift-line">
+                </div>
+                <div class="shift-circle" [ngClass]="{'ruler-selected': currentLanguage == 1}">
+                </div>
+            </div>
+            @if(currentLanguage == 0){
+                <div class="en-box" (click)="changeLanguage(); passData()">
+                    <div class="en-line">
+                    </div>
+                    <div class="en-cover">
+                    </div>
+                    <div class="en-letters pointer">EN</div>
+                </div>
+            }
+            @else{
+                <div class="selected">EN</div>
+            }
+        </div>
+        <div class="header-contact">
+            <div class="header-contact-box">
+                <div class="header-contact-icon">
+                    <img src="./assets/icons/linked1.png" alt="">
+                </div>
+                <div class="header-contact-icon">
+                    <img src="./assets/icons/git-contact1.png" alt="">
+                </div>
+                <div class="header-contact-icon">
+                    <img src="./assets/icons/mail.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

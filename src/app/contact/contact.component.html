@@ -1,0 +1,97 @@
+<section>
+    <div class="contact-left">
+        <div class="contact-left-box">
+            <div class="contact-subheadline">
+                {{ contactMe[currentLanguage] }}
+            </div>
+            <div class="contact-headline">
+                {{ contactMeTitle[currentLanguage] }}
+            </div>
+            <div class="contact-text-box">
+                <div class="contact-text">
+                    {{contactMeText[0][currentLanguage]}}
+                </div>
+                <div class="contact-text">
+                    {{contactMeText[1][currentLanguage]}}
+                </div>
+            </div>
+            <div class="contact-section-line" [ngClass]="{'mail-sent': mailWasSent == true}">{{ messageSentMessage[currentLanguage] }}</div>
+        </div>
+    </div>
+    <div class="contact-right">
+        <div class="form-box">                    
+            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+                <div class="input-box name-input" id="name-input">
+                    @if(name.touched && name.invalid){
+                        <label for="name-input-field" class="error-label">{{ nameError[currentLanguage] }}</label>
+                    }
+                    @if(name.touched && name.valid){
+                        <label for="name-input-field" class="correct-label">Name 
+                            <img src="./assets/lines/contact/checkmark.png" alt="">
+                        </label>
+                    }
+                    @if(name.untouched){
+                        <label for="name-input-field">{{ inputTitleName[currentLanguage] }}</label>
+                    }
+                    <input #name="ngModel" [(ngModel)]="contactData.name" id="name-input-field" type="text" placeholder="{{ placeHolderName[currentLanguage] }}" name="name" required autocomplete="true">
+                </div>
+                <div class="input-box mail-input" id="mail-input">
+                    @if (mail.touched && mail.invalid){
+                        <label for="mail-input-field" class="error-label">{{ emailError[currentLanguage] }}</label>
+                    }
+                    @if (mail.touched && mail.valid){
+                        <label for="mail-input-field" class="correct-label">Email 
+                             <img src="./assets/lines/contact/checkmark.png" alt="">
+                        </label>
+                    }
+                     @if (mail.untouched){
+                        <label for="mail-input-field">{{ inputTitleMail[currentLanguage] }}</label>
+                    }
+                    <input #mail="ngModel" [(ngModel)]="contactData.email" id="mail-input-field" type="text" placeholder="{{ placeHolderMail[currentLanguage] }}" name="email" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" autocomplete="false">
+                </div>
+
+               <div class="input-box subject-input" id="subject-input">
+                    @if(subject.touched && subject.invalid){
+                        <label for="subject-input-field" class="error-label">{{ subjectError[currentLanguage] }}</label>
+                    }
+                    @if(subject.touched && subject.valid){
+                        <label for="subject-input-field" class="correct-label">
+                            {{subjectCorrect[currentLanguage]}} <img src="./assets/lines/contact/checkmark.png" alt="">
+                        </label>
+                    }
+                    @if(subject.untouched){
+                        <label for="subject-input-field">{{ inputTitleSubject[currentLanguage] }}</label>
+                    }
+                    <input #subject="ngModel" [(ngModel)]="contactData.message" id="subject-input-field" type="text" placeholder="{{ placeHolderSubject[currentLanguage] }}" name="message" required minlength="20" maxlength="500">
+               </div>
+
+               <div class="input-privacy">
+                    <label for="privacy-input" class="container">
+                        <input #privacyRead="ngModel" [(ngModel)]="contactData.privacyRead" type="checkbox" id="privacy-input" name="privacyRead">
+                        <span class="checkbox-custom"></span>
+                    </label>
+                    <span class="privacy-policy">{{ privacyText[0][currentLanguage] }} <a target="_blank" rel="noopener noreferrer" href="./assets/privacy/privacy_policy{{ currentLanguage }}.pdf">privacy policy</a>{{ privacyText[1][currentLanguage] }} </span>
+               </div>
+               @if(privacyRead.touched && contactData.privacyRead == false){
+                    <div class="privacy-error visible">please accept the privacy policy</div>
+               }
+               @else {
+                    <div class="privacy-error invisible">please accept the privacy policy</div>
+
+               }
+               <div class="submit-box">
+                    @if(name.valid && mail.valid && subject.valid && contactData.privacyRead == true){
+                        <input type="submit" value="Send" class="submit-b">
+                    }
+                    @else{
+                        <input type="submit" value="Send" class="submit-disabled" disabled>
+                    }
+               </div>
+            </form>
+        </div>
+    </div>
+    <div class="sticker-box"> 
+        <app-sticker-button [stickerColor]=3></app-sticker-button>
+    </div>
+</section>
+

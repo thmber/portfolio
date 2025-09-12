@@ -1,0 +1,39 @@
+<section [ngClass]="{'background-dark': lightModus == false}">
+    <div class="footer-box" [ngClass]="{'black': lightModus == true}">
+        <div class="copyright-box">
+            <div class="logo-box" (mouseenter)="changeLetter()" (click)="goBackToTop()">
+                <div>{{ logoLetter1}}</div>
+                <div class="logo-m">{{ logoLetter2 }}</div>
+            </div>
+            <div>&copy; Thomas Mahler 2025</div>
+        </div>
+        <div class="footer-main">
+            <div class="legal-notice-box">
+                <div class="legal-notice" (click)="goToLegal(currentLanguage)">
+                    {{ legalLink [currentLanguage] }}
+                    <div class="legal-notice-line"></div>
+                </div>
+            </div>
+            <div class="footer-without-legal-box">
+                <div class="footer-button" [ngClass]="{'hover-light': lightModus == true}">
+                    <a href="https://github.com/thmber">Github</a>
+                    <div class="git">
+                        <img src="./assets/icons/git-contact1.png" alt="" [ngClass]="{'invert': lightModus == true}">
+                    </div>
+                </div>
+                <div class="footer-button" [ngClass]="{'hover-light': lightModus == true}">
+                    <a href="https://de.linkedin.com/">LinkedIn</a>
+                    <div class="linkedin">
+                        <img src="./assets/icons/linked1.png" alt="" [ngClass]="{'invert': lightModus == true}">
+                    </div>
+                </div>
+                <div class="footer-button" [ngClass]="{'hover-light': lightModus == true}">
+                    <a href="mailto:thmahler@gmx.net">Email</a>
+                    <div class="email">
+                        <img src="./assets/icons/mail.png" alt="" [ngClass]="{'invert': lightModus == true}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

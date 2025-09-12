@@ -1,0 +1,52 @@
+<app-header (receiveMessage)="receiveMessage($event)"></app-header>
+<section>
+    <div class="title-box">
+        <div class="hello-world-box">
+            <div class="hello-world" (mouseenter)="showName(); showSmile(); showColors()" (mouseleave)="backToHello(); showBracket(); doNotShowColors()">
+                    <p>{{ hello[currentLanguage][nameOrHello] }} </p>
+                    <div class="hello-wave">
+                        <img src="./assets/icons/wave.png" alt="" class="wave-image">
+                    </div>
+           </div>
+            <div class="title-developer">
+                @for(letter of ['F', 'u', 'l', 'l', 's', 't', 'a', 'c', 'k']; track letter; let index = $index){
+                    <p class="title-letter" (mouseenter)="mouseOnTitle(index, 0)" (mouseleave)="mouseLeftTitle(0)">{{ changeCases(letter, index, 0) }}</p>
+                }
+            </div>
+        </div>
+        <div class="get-in-touch-box">
+            <div class="hero-image-box" (mouseenter)="showSmile(); showColors()" (mouseleave)="showBracket(); doNotShowColors()">
+                <img src="./assets/img/robi.jpg" alt="" [ngClass]="{'show-colors': coloredPicture == true}">
+                <p>Thomas {{ polaroidSmile }}</p>
+            </div>
+            <div class="get-in-touch-under-image">
+                <div class="title-developer">
+                    @for(letter of ['D', 'E', 'V', 'E', 'L', 'O', 'P', 'E', 'R']; track letter; let index = $index){
+                        <p class="title-letter" (mouseenter)="mouseOnTitle(index, 1)" (mouseleave)="mouseLeftTitle(1)">{{ changeCases(letter, index, 1) }}</p>
+                    }
+                </div>
+                <div class="get-in-touch">
+                        <a href="#contact-section">{{ getTouch[currentLanguage]}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-contact">
+        <div class="header-contact-box">
+            <div class="header-contact-icon">
+                <img src="./assets/icons/linked1.png" alt="">
+            </div>
+            <div class="header-contact-icon">
+                <img src="./assets/icons/git-contact1.png" alt="">
+            </div>
+            <div class="header-contact-icon">
+                <img src="./assets/icons/mail.png" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+<app-about-me id="about-me-section" [currentLanguage]=currentLanguage></app-about-me>
+<app-skills id="skills-section" [currentLanguage]=currentLanguage></app-skills>
+<app-projects id="projects-section" [currentLanguage]=currentLanguage></app-projects>
+<app-contact id="contact-section" [currentLanguage]=currentLanguage ></app-contact>
+<app-footer [currentLanguage]=currentLanguage></app-footer>

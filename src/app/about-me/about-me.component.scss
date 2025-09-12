@@ -1,0 +1,144 @@
+@import './../abstracts/mixins.scss';
+@import './../abstracts/variables.scss';
+@mixin paper($z){
+    background-size: 480px 160px;
+    background-repeat: no-repeat;
+    @include flex(center, center);
+    z-index: 3;
+    color: white;
+    height: 160px;
+    width: 480px;
+    z-index: $z; 
+}
+section{
+    width: 100%;
+    max-width: 1440px;
+    min-height: 600px;
+    display: flex;
+    justify-content: space-around;
+    font-family: bricolage;
+    .ripped-papers-box{
+        display: flex;
+        width: 50%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .left-side{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 20px;
+            .paper-1{
+                @include paper(3);
+                background-image: url(../../assets/img/papers/paper1.png);
+                transform: translateY(30px) rotate(-3deg);
+            }
+            .paper-1-moving{
+                transform: translateY(30px) rotate(-2deg);
+            }
+            .paper-2{
+                background-image: url(../../assets/img/papers/paper3.png);
+                @include paper(2);
+            }
+            .paper-2-moving{
+                transform: rotate(-1deg);
+            }
+            .paper-3{
+                background-image: url(../../assets/img/papers/paper2.png);
+                transform: translateY(-50px) rotate(5deg);
+                @include paper(0);
+            }
+            .paper-3-moving{
+                transform: translateY(-50px) rotate(2deg);
+            }
+        }
+        
+    }
+    .about-me-box{
+        @include flex(center, flex-start);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        .subtitle-box{
+            display: flex;
+            justify-content: flex-start;
+            width: 70%;
+            .subtitle-about-me{
+                @include subheadline1();
+            }
+        }
+        
+        .title-aboutme{
+            @include headline2();
+            width: 70%;
+                .title-aboutme-line{
+                    background: url(./../../assets/lines/aboutme/about-me-line.png);
+                    width: 0;
+                    height: 20px;
+                    transform: translate(5px, -5px);
+                    background-size: 260px 20px;
+                    position: absolute;
+                    transition: all 225ms ease-in-out;
+                    background-repeat: no-repeat;
+                    animation: strokeLineHeadline2 2.5s infinite;
+                }
+        }
+        .aboutmetext-box{
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            font-family: bricolage-light;
+            font-size: 18px;
+            .text-about-me, .text-about-me2{
+                margin-bottom: 20px;
+            }
+        }
+        .letstalk-box{
+            display: flex;
+            width: 70%;
+            justify-content: flex-end;
+            .lets-talk-button{
+                @include defaultbuttonDesign(black);
+                    a{
+                        color: black;
+                        &:hover{
+                            color: white;
+                        }
+                    }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 1050px) {
+    section{
+        flex-direction: column-reverse;
+        align-items: center;
+        .ripped-papers-box{
+            width: 80%;
+        }
+        .about-me-box{
+            width: 100%;
+        }  
+    }
+}
+@media only screen and (max-width: 500px) {
+    section{
+        .ripped-papers-box{
+            .left-side{
+                .paper-1, .paper-2, .paper-3{
+                    width: 350px;
+                    background-size: 350px 160px;
+                }
+            }
+        }
+        .about-me-box{
+            width: 90%;
+            .title-aboutme{
+                font-size: 50px;
+            }
+        }
+    }
+}

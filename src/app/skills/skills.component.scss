@@ -1,0 +1,226 @@
+@import './../abstracts/mixins.scss';
+@import './../abstracts/variables.scss';
+section{
+    background-image: url(./../../assets/img/03_Skills.png);
+    font-family: bricolage;    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100vw;
+    min-height: 800px;
+    max-width: 1440px;
+    gap: 20px;
+    position: relative;
+    .headline-skills-box{
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 30px;
+        width: 25%;
+        .headline-skills{
+            color: white;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            flex-direction: column;
+            .subheadline-skills{
+                @include subheadline1();
+            }
+            .big-headline-skills{
+                @include headline2();
+            }
+            .skills-line{
+                background: url(./../../assets/lines/skills/skills-line.png);
+                background-position: 0 0;
+                position: absolute;
+                height: 0;
+                transform: translate(15px, 30px);
+                animation: strokeLineRound 4.5s infinite;
+            }
+            .skills-line-german{
+                background-size: 210px 90px;
+                width: 210px;
+            }
+            .skills-line-english{
+                background-size: 280px 90px;
+                width: 280px;
+            }
+            
+        }
+    }
+    .skills-box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        margin-top: 30px;
+        .paper-skills{
+            background-image: url(./../../assets/img/papers/1.Skills\ description.png);
+            width: 600px;
+            height: 180px;
+            background-size: 600px 180px;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-left: 10px;
+            font-family: bricolage-light;
+            font-size: 18px;
+        }
+        .all-skills-box{
+            z-index: 1;
+            margin-top: 20px;
+            width: 600px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 25px;
+            .skill-icon{
+                display: flex;
+                flex-direction: column;
+                color: white;
+                align-items: center;
+                font-size: 15px;
+                >img{
+                    width: 86px;
+                    filter: grayscale(1);
+                    transition: all 75ms ease-in-out;
+
+                    &:hover{
+                        filter: grayscale(0);
+                        transform: scale(0.87) rotate(1turn);
+                    }
+                }
+                >p{
+                    width: 60px;
+                    display: flex;
+                    justify-content: center;
+                }
+            }           
+        }
+    }
+    .pull-image-box{
+        z-index: 0;
+        display: flex;
+        width: 30%;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 30px;
+        .pull-image{
+            transform: translate(-20px, -120px) rotate(8deg);
+            min-height: 600px;
+            flex-grow: 0.8;
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            >img{
+                width: 250px;
+                position: absolute;
+                cursor: pointer;
+            }
+            .pull-text{
+                position: absolute;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                width: 150px;
+                flex-direction: column;
+                font-size: 40px;
+                font-family: Kalam;
+                line-height: 35px;
+                cursor: pointer;
+                >img{
+                    width: 70px;
+                }
+            }
+            .pull-also-interested{
+                position: absolute;
+                color: white;
+                @include flex(flex-start,center);
+                text-align: center;
+                width: 150px;
+                gap: 20px;
+                flex-direction: column;
+                font-size: 18px;
+                font-family: bricolage-bold;
+                line-height: 20px;
+                cursor: pointer;
+                .pull-box{
+                    @include flex(center,center);
+                    width: 100%;
+                    gap: 20px;
+                }
+                .also-interested-icon{
+                    @include flex(center,center);
+                    flex-direction: column;
+                    gap: 5px;
+                    font-family: bricolage;
+                    >img{
+                        width: 32px;
+                    }
+                }
+            }
+        }
+    }
+}
+@keyframes strokeLineRound {
+    0%{height: 0;}
+    40%{height: 0;}
+    50%{height: 90px;}
+    90%{height: 90px;}
+    100%{height: 0;}
+}
+@media only screen and (max-width: 1180px) {
+    section{
+        flex-direction: column;
+        align-items: center;
+        .headline-skills-box{
+            width: 80%;
+        }
+        .pull-image-box{
+            margin-top: -40px;
+            margin-left: 40px;
+        }
+        .skills-box{
+            width: 80%;
+            margin-top: 0;
+            .paper-skills{
+                width: 100%;
+                height: 250px;
+                background-size: 100% 250px;
+                padding: 10px;
+            }
+            .all-skills-box{
+                width: 100%;
+            }
+        }
+    }
+    .title-box{
+        margin-top: 130px !important;
+    }
+}
+@media only screen and (max-width: 400px) {
+    section{
+        .headline-skills-box{
+            width: 75%;
+        }
+        .skills-box{
+            .paper-skills{
+                width: 75%;
+                height: 320px;
+                background-size: 100% 320px;
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+            .all-skills-box{
+                width: 100%;
+            }
+        }
+    }
+}
