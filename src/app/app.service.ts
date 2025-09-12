@@ -35,7 +35,7 @@ descriptionTitle = ['Beschreibung', 'Description']
 
 projectGitLinks = ['https://github.com/thmber/wizardsking',
                   'https://github.com/thmber/pokedex', 
-                  '',
+                  'https://github.com/thmber/join',
                   'https://github.com/thmber/Ring-XO'
  ]
 
