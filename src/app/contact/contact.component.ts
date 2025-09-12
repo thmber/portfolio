@@ -40,7 +40,7 @@ contactData = {
 
   http = inject(HttpClient);
 
-  mailtest = true;
+  mailtest = false;
   mailWasSent = false;
 
 @Input({}) currentLanguage:number = 1;
@@ -61,7 +61,7 @@ contactData = {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-            ngForm.resetForm();
+            this.animateSentMail(ngForm)
           },
           error: (error) => {
             console.error(error);
@@ -70,7 +70,7 @@ contactData = {
             console.info('send post complete'),
         });
     } else if (this.mailtest) {
-      this.animateSentMail(ngForm)
+      ngForm.resetForm();
 
     }
   }

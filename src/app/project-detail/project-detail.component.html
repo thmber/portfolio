@@ -9,6 +9,9 @@
                 </div>
             </div>
             <div class="projects-headline-title">
+
+                <!-- depending on the project number, the image, 
+                 e.g. background of the div is changed -->
                 @if(projectNumber == 0){
                     {{ Data.projectTitles[projectNumber] }} 
                     <div class="projects-details-line" style="background-size: 300px 20px"></div>}
@@ -62,7 +65,7 @@
     </div>
     <div class="project-detail-right-side">
         <div class="project-right-img-buttons">
-            <img class="project-screenshot-image" src="./assets/img/project-screenshots/{{ Data.projectScreenshots[projectNumber] }}.png" alt="">
+            <img class="project-screenshot-image" src="./assets/img/project-screenshots/{{ Data.projectScreenshots[projectNumber] }}.avif" alt="">
             <div class="sticker-box">
                 @if(projectNumber == 0){
                     <app-sticker-button [stickerKind]=2></app-sticker-button>         
