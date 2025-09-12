@@ -17,6 +17,8 @@
             {{ skillsText[currentLanguage] }}
         </div>
         <div class="all-skills-box">
+            
+            <!-- these are the skill icons -->
             @for(skill of ['html', 'css', 'javascript', 'typescript', 'angular', 'git', 'rest-api', 'firebase','scrum','material design']; track skill){
                 <div class="skill-icon">
                     <img src="./assets/icons/{{skill}}.png" alt="">
@@ -28,6 +30,8 @@
     <div class="pull-image-box">
         <div class="pull-image" (click)="pullSticker()">
             <img src="./assets/stickers/pull/{{ stickerMode }}.png" alt="">
+
+            <!-- here the pullable sticker is configured -->
             @if(stickerMode == 0){
                 <div class="pull-text">
                     <img src="./assets/icons/arrow-sticker.png" alt="">

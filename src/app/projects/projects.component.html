@@ -40,6 +40,8 @@
     <app-sticker-button [stickerKind]=2 class="sticker-position"></app-sticker-button>
 </section>
 <section>
+
+    <!-- because project 2 and 3 look the same, they are rendered in one -->
     @for(project of [1, 2]; track project){
         <div class="projects-right-side" id="project-{{project}}">
             <div class="projects-right-subbox">

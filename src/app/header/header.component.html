@@ -52,6 +52,8 @@
                      <a href="#contact-section"><div class="contact-line"></div></a>
                  </div>
                  <div class="language-box">
+
+                    <!-- if the english version is selected, the DE box is clickable and vice versa -->
                      @if(currentLanguage == 1){
                          <div class="de-box" (click)="changeLanguage(); passData()">
                              DE
@@ -67,6 +69,7 @@
                          <div class="shift-circle" [ngClass]="{'ruler-selected': currentLanguage == 1}">
                          </div>
                      </div>
+
                      @if(currentLanguage == 0){
                          <div class="en-box" (click)="changeLanguage(); passData()">
                              <div class="en-line">

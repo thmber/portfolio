@@ -9,6 +9,8 @@
                     </div>
            </div>
             <div class="title-developer">
+
+                <!-- here the hover-changing letters are generated -->
                 @for(letter of ['F', 'u', 'l', 'l', 's', 't', 'a', 'c', 'k']; track letter; let index = $index){
                     <p class="title-letter" (mouseenter)="mouseOnTitle(index, 0)" (mouseleave)="mouseLeftTitle(0)">{{ changeCases(letter, index, 0) }}</p>
                 }

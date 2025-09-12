@@ -2,32 +2,32 @@
 <section>
     <div class="legal-box">
         <div class="headline-legal">
-            <div>{{ headline1[currentLanguage] }}</div>
+            <div>{{ Data.headline1[currentLanguage] }}</div>
             <div class="cancel-legal-box">
-                <div class="cancel-legal" (click)="goBackToHeroSection(currentLanguage)">{{ backArrow[currentLanguage] }}</div>
+                <div class="cancel-legal" (click)="goBackToHeroSection(currentLanguage)">{{ Data.backArrow[currentLanguage] }}</div>
                 <img src="./assets/lines/projects/Breadcrumb arrow 3.png" alt="" class="arrow-back-legal">
             </div>
         </div>
-        <div class="subheadline-legal">{{ imprint[currentLanguage] }}</div>
+        <div class="subheadline-legal">{{ Data.imprint[currentLanguage] }}</div>
         <div class="legal-text">&bull; Thomas Mahler <br>&bull; Weserstraße 191 <br>&bull; 12045 Berlin</div>
-        <div class="subheadline-legal">{{ exploringBoard[currentLanguage] }}</div>
+        <div class="subheadline-legal">{{ Data.exploringBoard[currentLanguage] }}</div>
         <div class="legal-text">Email: thmahler(at)gmx.net</div>
-        <div class="subheadline-legal">{{ termsTitle[currentLanguage] }}</div>
-        <div class="legal-text">{{ terms[currentLanguage] }}</div>
-        <div class="subheadline-legal">{{ scopeTitle[currentLanguage] }}</div>
+        <div class="subheadline-legal">{{ Data.termsTitle[currentLanguage] }}</div>
+        <div class="legal-text">{{ Data.terms[currentLanguage] }}</div>
+        <div class="subheadline-legal">{{ Data.scopeTitle[currentLanguage] }}</div>
         <div class="legal-text">
-            {{ scope[currentLanguage][0] }}
+            {{ Data.scope[currentLanguage][0] }}
             <br>
-            {{ scope[currentLanguage][1] }}
+            {{ Data.scope[currentLanguage][1] }}Data.
         </div>
-        <div class="subheadline-legal">{{ propriTitle[currentLanguage]}}</div>
-        <div class="legal-text">{{ propri[currentLanguage] }}</div>
-        <div class="subheadline-legal">{{ useTitle[currentLanguage] }}</div>
-        <div class="legal-text">{{ use[currentLanguage] }}</div>
-        <div class="subheadline-legal">{{ disclaimerTitle[currentLanguage] }}</div>
-        <div class="legal-text">{{ disclaimer[currentLanguage] }}</div>
-        <div class="subheadline-legal">{{ indemnTitle[currentLanguage] }}</div>
-        <div class="legal-text">{{ indemn[currentLanguage] }}</div>
+        <div class="subheadline-legal">{{ Data.propriTitle[currentLanguage]}}</div>
+        <div class="legal-text">{{ Data.propri[currentLanguage] }}</div>
+        <div class="subheadline-legal">{{ Data.useTitle[currentLanguage] }}</div>
+        <div class="legal-text">{{ Data.use[currentLanguage] }}</div>
+        <div class="subheadline-legal">{{ Data.disclaimerTitle[currentLanguage] }}</div>
+        <div class="legal-text">{{ Data.disclaimer[currentLanguage] }}</div>
+        <div class="subheadline-legal">{{ Data.indemnTitle[currentLanguage] }}</div>
+        <div class="legal-text">{{ Data.indemn[currentLanguage] }}</div>
     </div>
 </section>
 <app-footer [lightModus]=true [currentLanguage]=currentLanguage></app-footer>
