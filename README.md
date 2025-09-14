@@ -1,28 +1,49 @@
-# Portfolio
+# 🚀 Portfolio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
+Welcome to my personal portfolio!  
+Showcasing my best work, skills, and projects.
 
-## Development server
+![Portfolio Screenshot](assets/screenshot.png) <!-- Add a real screenshot path -->
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## ✨ Features
 
-## Code scaffolding
+- Interactive project gallery
+- Responsive design for all devices
+- Contact form
+- Downloadable resume
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🛠️ Built With
 
-## Build
+![Angular](https://img.shields.io/badge/Angular-17.0.3-red?logo=angular)
+![TypeScript](https://img.shields.io/badge/TypeScript-blue?logo=typescript)
+![Sass](https://img.shields.io/badge/Sass-pink?logo=sass)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 📦 Getting Started
 
-## Running unit tests
+To run locally:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+git clone https://github.com/thmber/portfolio.git
+cd portfolio
+npm install
+ng serve
+```
 
-## Running end-to-end tests
+Open [http://localhost:4200](http://localhost:4200) in your browser.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 🌐 Live Demo
 
-## Further help
+Check out the live portfolio: [thmber.github.io/portfolio](https://thmber.github.io/portfolio)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# portfolio
+## 👤 About Me
+
+I'm , a passionate developer focused on web technologies.
+
+## 📫 Contact
+
+- Email: your.email@example.com
+- LinkedIn: file)
+
+---
+
+*Generated with [Angular CLI](https://github.com/angular/angular-cli) v17.0.3*
