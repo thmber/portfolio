@@ -3,7 +3,7 @@
 Welcome to my personal portfolio!  
 Showcasing my best work, skills, and projects.
 
-![Portfolio Screenshot](assets/screenshot.png) <!-- Add a real screenshot path -->
+![Portfolio Screenshot](src/assets/readme/portfolio_screenshot.avif)
 
 ## ✨ Features
 
@@ -41,8 +41,6 @@ I'm , a passionate developer focused on web technologies.
 
 ## 📫 Contact
 
-- Email: your.email@example.com
-- LinkedIn: file)
 
 ---
 
