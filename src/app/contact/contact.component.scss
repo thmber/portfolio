@@ -3,7 +3,7 @@
 section:has(#name-input:hover) #mail-input {
     border-top: 1px solid $accent2;
 }
-  section:has(#mail-input:hover) #name-input {
+section:has(#mail-input:hover) #name-input {
     border-bottom: 1px solid transparent;
 }
 section:has(#subject-input:hover) #mail-input {
@@ -258,6 +258,12 @@ section{
 }
 .invisible{
     color: transparent;
+}
+.change-color{
+    color: $accent3;
+}
+.change-size{
+    font-size: 70px;
 }
 @media only screen and (max-width: 1200px) {
     section{

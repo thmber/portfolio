@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
 export class ContactComponent {
 
 contactMe:string[] = ['KONTAKT', 'CONTACT ME']
-contactMeTitle = ['Bereit zur Zusammenarbeit?','Ready to work together'];
+contactMeTitle = ['Bereit zur Zusammenarbeit?','Ready to work together?'];
 placeHolderMail:string[] = ['deinemail@mail.com', 'youremail@email.com']
 placeHolderName:string[] = ['Hier kommt dein Name hin', 'Your name goes here']
 placeHolderSubject:string[] = ['Hi Thomas, ich habe ein Problem...', 'Hi Thomas, I have a problem ...']
@@ -36,7 +36,9 @@ contactData = {
   subjectError:string[] = [`Oh, hier fehlt noch ein Nachrichtentext!`, 'Oh, your message is too short!'];
   subjectCorrect:string[] = [`Nachricht`, 'Message'];
   messageSentMessage:string[] = ['Deine Nachricht wurde gesendet!', 'Your message was sent!']
-  
+  subjectHeadlineLetters = [['B', 'e', 'r', 'e', 'i', 't', '', 'z', 'u', 'r','', 'Z', 'u', 's', 'a', 'm', 'm', 'e', 'n', 'a', 'r', 'b', 'e', 'i', 't', '?'],
+                          ['R', 'e', 'a', 'd', 'y', '', 't', 'o', '', 'w', 'o', 'r', 'k', '', 't', 'o', 'g', 'e', 't', 'h','e','r', '?']];
+  colorOfOneletter = [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true];
 
   http = inject(HttpClient);
 
@@ -82,4 +84,5 @@ contactData = {
       this.mailWasSent = false;
     }, 1500);
   }
+
 }

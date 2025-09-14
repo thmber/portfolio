@@ -23,7 +23,15 @@
             </div>
         </div>
         <div class="title-aboutme">
-            {{ headline[currentLanguage] }}
+
+            @for (letter of headlineAboutme[currentLanguage]; track letter; let index = $index) {
+                @if (letter == '') {
+                    <div>&nbsp;</div>
+                }
+                @else{
+                    <div (mouseenter)="changeColor(index)" (mouseleave)="backToDefaultColor(index)" [ngClass]="{'change-color': headlineDefaultColor[index] == false}">{{ letter }}</div>
+                }
+            }
             <div class="title-aboutme-line"></div>
         </div>
        <div class="aboutmetext-box">

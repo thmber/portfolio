@@ -46,7 +46,6 @@ export class HeaderComponent {
   }
 
   ngOnInit(): void {
-    console.log('Sorry, image will be updated soon :)');
     if (this.routedFromHero) {
       this.currentLanguage = this.passedLanguage;
     }

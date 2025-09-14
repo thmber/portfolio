@@ -1,15 +1,13 @@
 import { CommonModule} from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { HeaderComponent } from '../header/header.component';
 import { StickerButtonComponent } from '../sticker-button/sticker-button.component';
-import { ProjectDetailComponent } from '../project-detail/project-detail.component';
 import { Router } from '@angular/router';
 
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, StickerButtonComponent, ProjectDetailComponent],
+  imports: [CommonModule, StickerButtonComponent],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
@@ -18,7 +16,7 @@ export class ProjectsComponent {
   @Input({}) currentLanguage:number = 1;
 
   craft = ['MEIN HANDWERK', 'MY CRAFT']
-  projectHeadlines = ['Projekte', 'Projects']
+  projectHeadlines = [['P', 'r', 'o', 'j', 'e', 'k', 't', 'e'],['P', 'r', 'o', 'j', 'e', 'c', 't', 's']]
   projectDetails = ['Projekt Details', 'Project Details']
   projectHeadlineText = ['Hier sind meine Coding-Fähigkeiten in Aktion: Jedes Projekt steht für meinen Ansatz, benutzerfreundliche Designs mit effizientem Code umzusetzen.',
                         'Take a look at some of my projects and see my front-end skills in action. Each project highlights my approach to building responsive, user-friendly designs with efficient code.']
@@ -32,7 +30,7 @@ export class ProjectsComponent {
                       ['Task Manager, inspiriert durch das Kanban System. Erstelle und organisiere Aufgaben mit Drag-and-Drop-Funktionen, weise Benutzer und Kategorien zu.',
                         'Task Manager inspired by the Kanban System. Create and Organise Tasks using drag and drop functions, assign users and categories'
                        ]]
-
+  headlineDefaultColor = [true, true, true, true, true, true, true, true];
 
   constructor(private router: Router){
   }
@@ -42,4 +40,11 @@ export class ProjectsComponent {
     this.router.navigate(['project-detail', `${id}`, `${language}`])
   }
 
+  changeColor(index:number){
+    this.headlineDefaultColor[index] = false;
+  }
+
+  changeBackToDefaultColor(index:number){
+    this.headlineDefaultColor[index] = true;
+  }
 }

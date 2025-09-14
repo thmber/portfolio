@@ -3,25 +3,38 @@
         <div class="headline-skills">
             <div class="subheadline-skills">{{ myStack[currentLanguage] }}</div>
             @if(currentLanguage == 0){
-                <div class="big-headline-skills">Skills</div>
+                <div class="big-headline-skills">
+                    @for (letter of ['S', 'k', 'i', 'l', 'l', 's']; track letter; let index = $index) {
+                        <div (mouseenter)="changeColor(index)" (mouseleave)="backToDefaultColor(index)" [ngClass]="{'change-color': headlineDefaultColor[index] == false}">{{ letter }}</div>
+                    }
+                </div>
                 <div class="skills-line skills-line-german"></div>
             }
             @else{
-                <div class="big-headline-skills">Skill Set</div>
+                <div class="big-headline-skills">
+                    @for (letter of ['S', 'k', 'i', 'l', 'l', '', 's', 'e', 't']; track letter; let index = $index) {
+                        @if (letter == '') {
+                            <div>&nbsp;</div>
+                        }
+                        @else {
+                            <div (mouseenter)="changeColor(index)" (mouseleave)="backToDefaultColor(index)" [ngClass]="{'change-color': headlineDefaultColor[index] == false}">{{ letter }}</div>
+                        }
+                    }
+                </div>
                 <div class="skills-line skills-line-english"></div>
             }
         </div>
     </div>
     <div class="skills-box">
-        <div class="paper-skills">
+        <div class="paper-skills" (mouseenter)="animateSkill()" (mouseleave)="doNotAnimateSkill()">
             {{ skillsText[currentLanguage] }}
         </div>
         <div class="all-skills-box">
             
             <!-- these are the skill icons -->
-            @for(skill of ['html', 'css', 'javascript', 'typescript', 'angular', 'git', 'rest-api', 'firebase','scrum','material design']; track skill){
+            @for(skill of allSkills; track skill; let index = $index){
                 <div class="skill-icon">
-                    <img src="./assets/icons/{{skill}}.png" alt="">
+                    <img src="./assets/icons/{{skill}}.png" alt="" [ngClass]="{'animate-skill': oneRandomSkillIsAnimated == true && randomSkill == index}">
                     <p>{{skill}}</p>
                 </div>
             }

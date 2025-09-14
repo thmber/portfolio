@@ -36,20 +36,20 @@
             </div>
              <div class="header-withoutlogo-box" [ngClass]="{'header-withoutlogo-box-burger': burgerMenuOpen == true}">
                  <div class="aboutme" >
-                     <a href="#" [ngClass]="{'black': backgroundLight == true}">{{ aboutMe[currentLanguage] }}</a>
-                     <a href="#about-me-section"><div class="aboutme-line"></div></a>
+                     <a href="#about-me-section" [ngClass]="{'black': backgroundLight == true}">{{ aboutMe[currentLanguage] }}
+                     <div class="aboutme-line"></div></a>
                  </div>
                  <div class="skills">
-                     <a href="#" [ngClass]="{'black': backgroundLight == true}">Skills</a>
-                     <a href="#skills-section"><div class="skills-line"></div></a>
+                     <a href="#skills-section" [ngClass]="{'black': backgroundLight == true}">Skills
+                     <div class="skills-line"></div></a>
                  </div>
                  <div class="projects">
-                     <a href="#">{{ projects[currentLanguage] }}</a>
-                     <a href="#projects-section"><div class="projects-line"></div></a>
+                     <a href="projects-section">{{ projects[currentLanguage] }}
+                     <div class="projects-line"></div></a>
                  </div>
                  <div class="contact">
-                     <a href="#">{{ contact[currentLanguage] }}</a>
-                     <a href="#contact-section"><div class="contact-line"></div></a>
+                     <a href="#contactd-section">{{ contact[currentLanguage] }}
+                     <div class="contact-line"></div></a>
                  </div>
                  <div class="language-box">
 
@@ -96,21 +96,21 @@
                 </div>
             </a>
        </div>
-        <div class="aboutme" >
-            <a href="#">{{ aboutMe[currentLanguage] }}</a>
-            <a href="#about-me-section"><div class="aboutme-line"></div></a>
+        <div class="aboutme" (click)="openBurgerMenu()">
+            <a href="#about-me-section">{{ aboutMe[currentLanguage] }}
+            <div class="aboutme-line"></div></a>
         </div>
-        <div class="skills">
-            <a href="#">Skills</a>
-            <a href="#skills-section"><div class="skills-line"></div></a>
+        <div class="skills" (click)="openBurgerMenu()">
+            <a href="#skills-section">Skills
+            <div class="skills-line"></div></a>
         </div>
-        <div class="projects">
-            <a href="#">{{ projects[currentLanguage] }}</a>
-            <a href="#projects-section"><div class="projects-line"></div></a>
+        <div class="projects" (click)="openBurgerMenu()">
+            <a href="#projects-section">{{ projects[currentLanguage] }}
+            <div class="projects-line"></div></a>
         </div>
-        <div class="contact">
-            <a href="#">{{ contact[currentLanguage] }}</a>
-            <a href="#contact-section"><div class="contact-line"></div></a>
+        <div class="contact" (click)="openBurgerMenu()">
+            <a href="#contact-section">{{ contact[currentLanguage] }}
+            <div class="contact-line"></div></a>
         </div>
         <div class="language-box">
             @if(currentLanguage == 1){
@@ -143,15 +143,21 @@
         </div>
         <div class="header-contact">
             <div class="header-contact-box">
-                <div class="header-contact-icon">
-                    <img src="./assets/icons/linked1.png" alt="">
-                </div>
-                <div class="header-contact-icon">
-                    <img src="./assets/icons/git-contact1.png" alt="">
-                </div>
-                <div class="header-contact-icon">
-                    <img src="./assets/icons/mail.png" alt="">
-                </div>
+                 <a href="https://de.linkedin.com" target="_blank">
+                     <div class="header-contact-icon">
+                        <img src="./assets/icons/linked1.png" alt="">
+                    </div>
+                </a>
+                <a href="https://github.com/thmber" target="_blank">
+                    <div class="header-contact-icon">
+                        <img src="./assets/icons/git-contact1.png" alt="">
+                    </div>
+                </a>
+                <a href="mailto: thmahler@gmx.net" target="_blank">
+                    <div class="header-contact-icon">
+                        <img src="./assets/icons/mail.png" alt="">
+                    </div>
+                </a>
             </div>
         </div>
     </div>

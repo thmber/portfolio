@@ -31,6 +31,8 @@ section{
             }
             .big-headline-skills{
                 @include headline2();
+                @include flex(flex-start, center);
+                z-index: 2;
             }
             .skills-line{
                 background: url(./../../assets/lines/skills/skills-line.png);
@@ -39,6 +41,8 @@ section{
                 height: 0;
                 transform: translate(15px, 30px);
                 animation: strokeLineRound 4.5s infinite;
+                z-index: 1;
+
             }
             .skills-line-german{
                 background-size: 210px 90px;
@@ -91,7 +95,7 @@ section{
                     transition: all 75ms ease-in-out;
 
                     &:hover{
-                        filter: grayscale(0);
+                        filter: grayscale(0) drop-shadow(0 0 2.75rem rgb(255, 223, 44));;
                         transform: scale(0.87) rotate(1turn);
                     }
                 }
@@ -168,6 +172,14 @@ section{
             }
         }
     }
+}
+.change-color{
+    color: $accent3;
+    font-size: 62px;
+}
+.animate-skill{
+    filter: grayscale(0) drop-shadow(0 0 2.75rem rgb(255, 223, 44)) !important;;
+    transform: scale(0.87) rotate(1turn) !important;
 }
 @keyframes strokeLineRound {
     0%{height: 0;}

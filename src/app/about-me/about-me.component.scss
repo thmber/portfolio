@@ -71,12 +71,15 @@ section{
         
         .title-aboutme{
             @include headline2();
+            @include flex(flex-start, center);
             width: 70%;
+            z-index: 2;
                 .title-aboutme-line{
                     background: url(./../../assets/lines/aboutme/about-me-line.png);
                     width: 0;
                     height: 20px;
-                    transform: translate(5px, -5px);
+                    z-index: 1;
+                    transform: translate(0, 35px);
                     background-size: 260px 20px;
                     position: absolute;
                     transition: all 225ms ease-in-out;
@@ -112,6 +115,10 @@ section{
         }
     }
 }
+.change-color{
+    color: $accent2;
+    font-size: 62px;
+}
 @media only screen and (max-width: 1050px) {
     section{
         flex-direction: column-reverse;
@@ -140,5 +147,8 @@ section{
                 font-size: 50px;
             }
         }
+    }
+    .change-color{
+        font-size: 47px;
     }
 }

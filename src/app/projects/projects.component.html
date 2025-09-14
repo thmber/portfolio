@@ -6,7 +6,9 @@
             </div>
             <div class="headline-box">
                 <div class="projects-headline">
-                    {{  projectHeadlines[currentLanguage]  }}
+                     @for(letter of projectHeadlines[currentLanguage]; track letter; let index = $index){
+                        <div (mouseenter)="changeColor(index)" (mouseleave)="changeBackToDefaultColor(index)" [ngClass]="{'change-color': headlineDefaultColor[index] == false}">{{ letter}}</div>
+                        }
                 </div>
                 <div class="projects-line"></div>
             </div>
