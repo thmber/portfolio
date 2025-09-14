@@ -1,9 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, EventEmitter, Output } from '@angular/core';
-import { inject } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
-import { AppService } from '../app.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 
 
 
@@ -12,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
@@ -54,6 +52,7 @@ export class HeaderComponent {
       this.receiveMessage.emit(this.currentLanguage);
     }
   }
+
 
 
   changeLanguage(){
@@ -113,4 +112,5 @@ export class HeaderComponent {
   doNotShowDrawing(){
     this.drawingShown = false;
   }
+
 }

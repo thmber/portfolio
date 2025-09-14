@@ -46,9 +46,6 @@ export class SkillsComponent {
   animateSkill(){
     this.oneRandomSkillIsAnimated = true;
     this.randomSkill = Math.floor(Math.random() * 10); 
-    setTimeout(() => {
-      this.oneRandomSkillIsAnimated = false;
-    }, 300);
   }
 
   doNotAnimateSkill(){

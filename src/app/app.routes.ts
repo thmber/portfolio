@@ -3,6 +3,9 @@ import { HeroSectionComponent } from './hero-section/hero-section.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { LegalnoticeComponent } from './legalnotice/legalnotice.component';
+import { NgModule } from '@angular/core';  
+import { RouterModule } from '@angular/router';  
+import { AboutMeComponent } from './about-me/about-me.component';
 
 
 export const routes: Routes = [
@@ -10,5 +13,6 @@ export const routes: Routes = [
     {path: 'app-projects', component: ProjectsComponent},
     {path: 'project-detail/:id/:language', component: ProjectDetailComponent},
     {path:'legalnotice/:language', component:LegalnoticeComponent},
-    {path:'header-hero/:language', component:HeroSectionComponent}
+    {path:'header-hero/:language', component:HeroSectionComponent}, 
+    {path: 'aboutme', component:AboutMeComponent}
 ];
