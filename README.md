@@ -1,4 +1,4 @@
-# 🚀 Portfolio
+# :camera: Portfolio
 
 Welcome to my personal portfolio!  
 Showcasing my work, skills, and projects.
@@ -17,6 +17,7 @@ Showcasing my work, skills, and projects.
 ![Angular](src/assets/icons/angular.png)
 ![TypeScript](src/assets/icons/typescript.png)
 ![Sass](src/assets/icons/css.png)
+![Html](src/assets/icons/html.png)
 
 ## 📦 Getting Started
 
