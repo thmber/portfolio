@@ -14,9 +14,9 @@ Showcasing my work, skills, and projects.
 
 ## 🛠️ Built With
 
-![Angular](../portfolio/src/assets/icons/angular.png)
-![TypeScript](../portfolio/src/assets/icons/typescript.png)
-![Sass](../portfolio/src/assets/icons/css.png)
+![Angular](src/assets/icons/angular.png)
+![TypeScript](src/assets/icons/typescript.png)
+![Sass](src/assets/icons/css.png)
 
 ## 📦 Getting Started
 
