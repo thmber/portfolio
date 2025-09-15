@@ -1,4 +1,4 @@
-# :fireworks: Portfolio
+## :pushpin: Hi there
 
 Welcome to my personal portfolio!  
 Showcasing my work, skills, and projects.
@@ -42,6 +42,7 @@ I'm , a passionate developer focused on web technologies.
 
 ## :computer: Contact
 
+thmahler(at)gmx.net
 
 ---
 
