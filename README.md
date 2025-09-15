@@ -1,7 +1,7 @@
 # 🚀 Portfolio
 
 Welcome to my personal portfolio!  
-Showcasing my best work, skills, and projects.
+Showcasing my work, skills, and projects.
 
 ![Portfolio Screenshot](src/assets/readme/portfolio_screenshot.avif)
 
@@ -14,9 +14,9 @@ Showcasing my best work, skills, and projects.
 
 ## 🛠️ Built With
 
-![Angular](https://img.shields.io/badge/Angular-17.0.3-red?logo=angular)
-![TypeScript](https://img.shields.io/badge/TypeScript-blue?logo=typescript)
-![Sass](https://img.shields.io/badge/Sass-pink?logo=sass)
+![Angular](../portfolio/src/assets/icons/angular.png)
+![TypeScript](../portfolio/src/assets/icons/typescript.png)
+![Sass](../portfolio/src/assets/icons/css.png)
 
 ## 📦 Getting Started
 
