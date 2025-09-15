@@ -34,13 +34,14 @@ Open [http://localhost:4200](http://localhost:4200) in your browser.
 
 ## :notes: Live Demo
 
-Check out the live portfolio: [thmber.github.io/portfolio](https://thmber.github.io/portfolio)
+Check out the live portfolio: 
+[Link Text](https://thmahler.net/portfolio)
 
 ## :bike: About Me
 
-I'm , a passionate developer focused on web technologies.
+I like bikes, coding and philosophy. Maybe not in that order.
 
-## :computer: Contact
+## :coffee: Contact
 
 thmahler(at)gmx.net
 
