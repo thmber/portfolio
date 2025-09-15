@@ -35,11 +35,11 @@ Open [http://localhost:4200](http://localhost:4200) in your browser.
 ## :notes: Live Demo
 
 Check out the live portfolio: 
-[Link Text](https://thmahler.net/portfolio)
+[Link portfolio](https://thmahler.net/portfolio)
 
 ## :bike: About Me
 
-I like bikes, coding and philosophy. Maybe not in that order.
+I like :bike: bikes, :computer: coding and :first_quarter_moon: philosophy. Maybe not in that order.
 
 ## :coffee: Contact
 
