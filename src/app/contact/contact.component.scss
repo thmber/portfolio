@@ -11,13 +11,16 @@ section:has(#subject-input:hover) #mail-input {
 }
 section{
     width: 100vw;
-    max-width: 1440px;
     background-position: -10px 0;
     background-image: url(./../../assets/img/Footer.png);
     background-size: cover;
     @include flex(center, center);
     position: relative;
-    .contact-left{
+    .contact-content{
+        @include flex(center, center);
+        max-width: 1440px;
+        width: 100%;
+        .contact-left{
         width: 50%;
         margin-top: 120px;
         margin-bottom: 60px;
@@ -43,6 +46,7 @@ section{
                 }
             }
             .contact-section-line{
+                background-color: blue;
                 margin-top: 30px;
                 position: absolute;
                 background: url(./../../assets/lines/contact/contact-big-arrow.png);
@@ -51,8 +55,8 @@ section{
                 height: 50px;
                 background-position: 0 0;
                 background-size:  260px 50px;
-                bottom: 7%;
-                left: 25%;
+                bottom: 5%;
+                left: 30vw;
                 animation: strokeLineHeadline2 2.5s infinite;
             }
         }
@@ -61,7 +65,14 @@ section{
         width: 50%;
         margin-top: 220px;
         margin-bottom: 60px;
+        position: relative;
         @include flex(flex-end, center);
+        .sticker-box{
+            position: absolute;
+            right: 45%;
+            top: -20%;
+            transform: scale(1.3);
+        }
         .form-box{
             @include flex(flex-start, center);
             width: 90%;
@@ -238,11 +249,6 @@ section{
             }
         }
     }
-    .sticker-box{
-        position: absolute;
-        right: 22%;
-        top: 16%;
-        transform: scale(1.2);
     }
 }
 .mail-sent{
@@ -267,57 +273,58 @@ section{
 }
 @media only screen and (max-width: 1200px) {
     section{
-        .contact-left{
+        .contact-content{
+            .contact-left{
             .contact-left-box{
                 .contact-headline{
                     font-size: 45px;
                 }
                 .contact-section-line{
-                    left: 200px;
+                    left: 10%;
                 }
+            }
             }
         }
     }
 }
 @media only screen and (max-width: 950px) {
     section{
-        flex-direction: column;
-        justify-content: flex-start;
-        .contact-left{
-            width: 90%;
-            margin-top: 150px;
-            margin-bottom: 40px;
-            .contact-left-box{
-                width: 80%;
-                .contact-section-line{
-                   left: 18%;
-                   bottom: 5%;
-                }
-                .contact-headline{
-                    font-size: 54px;
-                }
-            }
-        }
-        .contact-right{
-            width: 90% !important;
-            margin-top: 100px;
-            @include flex(center, flex-start);
-            .form-box{
-                width: 80%;
-                .submit-box{
-                    margin-top: 40px;
-                    width: 90% !important;
+        .contact-content{
+            flex-direction: column;
+            justify-content: flex-start;
+            .contact-left{
+                width: 90%;
+                margin-top: 150px;
+                margin-bottom: 40px;
+                .contact-left-box{
+                    width: 80%;
+                    .contact-section-line{
+                        bottom: 5%;
+                    }
+                    .contact-headline{
+                        font-size: 54px;
                 }
             }
-        }
-        .sticker-box{
-            top: 47%;
-            right: 35%;
+         }
+            .contact-right{
+                width: 90% !important;
+                margin-top: 100px;
+                @include flex(center, flex-start);
+                .form-box{
+                    width: 80%;
+                    .submit-box{
+                        margin-top: 40px;
+                        width: 90% !important;
+                    }
+                }
+            }
+
         }
     }
 }
 @media only screen and (max-width: 650px) {
     section{
+        .contact-content{
         .contact-left{
             .contact-left-box{
                 width: 100%;
@@ -326,11 +333,14 @@ section{
                     background-size: 180px 40px;
                     animation: strokeLineHeadline2smaller 2.5s infinite;
                     bottom: 5%;
-                    left: 17%;
+                    left: 5%;
                 }
             }
         }
         .contact-right{
+            .sticker-box{
+                transform: scale(1.1);
+            }
             .form-box{
                 width: 100%;
                 .submit-box{
@@ -351,11 +361,7 @@ section{
                     }
                 }
             }            
-        }
-        .sticker-box{
-            transform: scale(1);
-            top: 50%;
-            right: 42%;
+        }  
         }
     }
 }
@@ -372,12 +378,14 @@ section{
 }
 @media only screen and (max-width: 470px) {
     section{
-        .contact-left{
-            .contact-left-box{
-                .contact-section-line{
-                    background-size: 150px 40px;
-                    animation: strokeLineHeadline2evensmaller 2.5s infinite;
-                    left: 10%;
+        .contact-content{
+                .contact-left{
+                    .contact-left-box{
+                    .contact-section-line{
+                        background-size: 150px 40px;
+                        animation: strokeLineHeadline2evensmaller 2.5s infinite;
+                        left: 10%;
+                    }
                 }
             }
         }

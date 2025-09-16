@@ -1,6 +1,7 @@
 <app-header (receiveMessage)="receiveMessage($event)" [backgroundLight]=true [passedLanguage]=currentLanguage [routedFromHero]=true></app-header>
 <div class="project-detail-overlay">
-    <div class="project-detail-left-side">
+    <div class="project-detail-content">
+        <div class="project-detail-left-side">
         <div class="project-left-side-box">
             <div class="back-and-next-box">
                 <div class="go-back-box">
@@ -76,7 +77,7 @@
             </div>
             <div class="button-box">
                 <a href="{{ Data.projectGitLinks[projectNumber ]}}"><div class="project-button">GitHub</div></a>
-                <a href="{{ Data.projectLinks[projectNumber] }}"><div class="project-button">{{ testen[currentLanguage] }}</div></a>
+                <a href="{{ Data.projectLinks[projectNumber] }}" target="_blank"><div class="project-button">{{ testen[currentLanguage] }}</div></a>
             </div>
             <div class="next-project-arrow-box">
                 <div class="back-arrow">
@@ -90,5 +91,5 @@
             </div>
         </div>
     </div>
+    </div>
 </div>
- 

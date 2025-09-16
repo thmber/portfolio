@@ -1,6 +1,7 @@
 <app-header [passedLanguage]=currentLanguage (receiveMessage)="receiveMessage($event)" [routedFromHero]=true></app-header>
 <section>
-    <div class="legal-box">
+    <div class="legalnotice-content">
+        <div class="legal-box">
         <div class="headline-legal">
             <div>{{ Data.headline1[currentLanguage] }}</div>
             <div class="cancel-legal-box">
@@ -28,6 +29,7 @@
         <div class="legal-text">{{ Data.disclaimer[currentLanguage] }}</div>
         <div class="subheadline-legal">{{ Data.indemnTitle[currentLanguage] }}</div>
         <div class="legal-text">{{ Data.indemn[currentLanguage] }}</div>
+    </div>
     </div>
 </section>
 <app-footer [lightModus]=true [currentLanguage]=currentLanguage></app-footer>

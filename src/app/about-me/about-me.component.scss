@@ -12,12 +12,15 @@
 }
 section{
     width: 100%;
-    max-width: 1440px;
     min-height: 600px;
     display: flex;
     justify-content: space-around;
     font-family: bricolage;
-    .ripped-papers-box{
+    .aboutme-content{
+        max-width: 1440px;
+        width: 100%;
+        @include flex(center, center);
+        .ripped-papers-box{
         display: flex;
         width: 50%;
         flex-direction: column;
@@ -114,37 +117,40 @@ section{
             }
         }
     }
+    }
 }
 .change-color{
     color: $accent2;
     font-size: 62px;
 }
 @media only screen and (max-width: 1050px) {
-    section{
+    .aboutme-content{
         flex-direction: column-reverse;
         align-items: center;
         .ripped-papers-box{
-            width: 80%;
+            width: 80% !important;
         }
         .about-me-box{
-            width: 100%;
+            width: 100% !important;
         }  
     }
 }
 @media only screen and (max-width: 500px) {
     section{
-        .ripped-papers-box{
-            .left-side{
-                .paper-1, .paper-2, .paper-3{
-                    width: 350px;
-                    background-size: 350px 160px;
+        .aboutme-content{
+            .ripped-papers-box{
+                .left-side{
+                    .paper-1, .paper-2, .paper-3{
+                        width: 350px;
+                        background-size: 350px 160px;
+                    }
                 }
             }
-        }
-        .about-me-box{
-            width: 90%;
+            .about-me-box{
+                width: 90%;
             .title-aboutme{
                 font-size: 50px;
+            }
             }
         }
     }

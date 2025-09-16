@@ -4,13 +4,13 @@ section{
     position: absolute;
     @include flex(center, flex-end);
     width: 100vw;
-    max-width: 1440px;
     font-family: bricolage-bold;
     color: white;
     background-color: white;
     .footer-box{
         font-size: 18px;
-        width: 100vw;
+        width: 100%;
+        max-width: 1440px;
         margin-bottom: 20px;
         @include flex(center,center);
         flex-direction: column;

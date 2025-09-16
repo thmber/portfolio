@@ -9,9 +9,13 @@ section{
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: 0 0;
-    max-width: 1440px;
     color: white;
-    .title-box{
+    .hero-content{
+        max-width: 1440px;
+        width: 100%;
+        position: relative;
+        @include flex(center, center);
+        .title-box{
         margin-top: 50px;
         @include flex(center, center);
         flex-direction: column;
@@ -97,6 +101,7 @@ section{
         }
     }
     }
+    }
 }
 .title-developer{
     @include flex(center, center);
@@ -111,8 +116,8 @@ section{
 }
 .header-contact{
     position: absolute;
-    top: 66%;
-    left: 20%;
+    bottom: 0;
+    left: 5%;
     .header-contact-box{
         display: flex;
         flex-direction: column;
@@ -142,9 +147,6 @@ section{
 
 @media only screen and (max-width: 1440px) {
     section{
-        .header-contact{
-            left: 10%;
-        }
         .title-developer{
             font-size: 8em;
         }
@@ -188,7 +190,7 @@ section{
     section{
         align-items: flex-start !important;
         .title-box{
-            margin-top: 132px;
+            margin-top: 120px !important;
             width: 80% !important;
             z-index: 1;
         }
@@ -199,7 +201,7 @@ section{
 }
 @media only screen and (max-width: 600px) {
     .title-developer{
-        font-size: 4.5em;
+        font-size: 4.5em !important; 
     }
     .hero-image-box{
         transform: translate(-180px, 180px) rotate(8deg) !important;
@@ -207,7 +209,7 @@ section{
 }
 @media only screen and (max-width: 500px) {
     .title-developer{
-        font-size: 3.8em;
+        font-size: 3.8em !important;
     }
     .hero-image-box{
         transform: translate(-100px, 220px) rotate(8deg) !important;

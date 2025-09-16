@@ -1,5 +1,6 @@
 <app-header (receiveMessage)="receiveMessage($event)"></app-header>
 <section>
+    <div class="hero-content">
     <div class="title-box">
         <div class="hello-world-box">
             <div class="hello-world" (mouseenter)="showName(); showSmile(); showColors()" (mouseleave)="backToHello(); showBracket(); doNotShowColors()">
@@ -51,6 +52,7 @@
             </div>
             </a>
         </div>
+    </div>
     </div>
 </section>
 <app-about-me id="about-me-section" [currentLanguage]=currentLanguage></app-about-me>

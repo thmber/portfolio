@@ -1,5 +1,6 @@
 <section>
-    <div class="projects-left-side">
+    <div class="project-content-one">
+        <div class="projects-left-side">
         <div class="projects-left-subbox">
             <div class="projects-subheadline">
                 {{ craft[currentLanguage] }}
@@ -40,8 +41,11 @@
         </div>
     </div>
     <app-sticker-button [stickerKind]=2 class="sticker-position"></app-sticker-button>
+
+    </div>
 </section>
 <section>
+    <div class="project-content-two">
 
     <!-- because project 2 and 3 look the same, they are rendered in one -->
     @for(project of [1, 2]; track project){
@@ -65,4 +69,5 @@
             </div>
      </div>
     }
+    </div>
 </section>

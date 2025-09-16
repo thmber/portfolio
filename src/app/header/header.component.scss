@@ -13,17 +13,18 @@ section{
     font-family: bricolage;
     color: rgb(219, 220, 221);
     font-size: 18px;
+    display: flex;
+    justify-content: center;
 }
 .header-with-burger-menu{
     display: none;
     position: absolute;
     @include flex(center, center);
-    max-width: 1440px;
     width: 100vw;
     height: 80px;
     .header-with-burger-menu-box{
         @include flex(space-between, center);
-        width: 75%;
+        width: 80%;
         .header-logo-box{
             position: absolute;
             left: 45px;
@@ -457,7 +458,7 @@ section{
     }
 }
 .gradient-background{
-    background: linear-gradient(to top, transparent, rgb(0, 0, 0, 0.55)) !important;
+    background: linear-gradient(to top, transparent, rgb(0, 0, 0, 0.7)) !important;
 }
 .pointer{
     cursor: pointer;

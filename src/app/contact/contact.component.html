@@ -1,11 +1,12 @@
 <section>
-    <div class="contact-left">
+    <div class="contact-content">
+        <div class="contact-left">
         <div class="contact-left-box">
             <div class="contact-subheadline">
                 {{ contactMe[currentLanguage] }}
             </div>
             <div class="contact-headline">
-                Ready to work together?
+                {{ contactMeTitle[currentLanguage] }}
             </div>
             <div class="contact-text-box">
                 <div class="contact-text">
@@ -19,6 +20,9 @@
         </div>
     </div>
     <div class="contact-right">
+        <div class="sticker-box"> 
+        <app-sticker-button [stickerColor]=3></app-sticker-button>
+        </div>
         <div class="form-box">                    
             <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
                 <div class="input-box name-input" id="name-input">
@@ -90,8 +94,6 @@
             </form>
         </div>
     </div>
-    <div class="sticker-box"> 
-        <app-sticker-button [stickerColor]=3></app-sticker-button>
     </div>
 </section>
 

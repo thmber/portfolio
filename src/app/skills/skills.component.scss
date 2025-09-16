@@ -3,7 +3,7 @@
 section{
     background-image: url(./../../assets/img/03_Skills.png);
     font-family: bricolage;    
-    background-size: cover;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
     padding-top: 30px;
@@ -12,10 +12,13 @@ section{
     align-items: flex-start;
     width: 100vw;
     min-height: 800px;
-    max-width: 1440px;
     gap: 20px;
     position: relative;
-    .headline-skills-box{
+    .skills-content{
+        max-width: 1440px;
+        width: 100%;
+        @include flex(center, center);
+        .headline-skills-box{
         display: flex;
         justify-content: flex-end;
         margin-top: 30px;
@@ -172,6 +175,7 @@ section{
             }
         }
     }
+    }
 }
 .change-color{
     color: $accent3;
@@ -190,7 +194,8 @@ section{
 }
 @media only screen and (max-width: 1180px) {
     section{
-        flex-direction: column;
+        .skills-content{
+                    flex-direction: column;
         align-items: center;
         .headline-skills-box{
             width: 80%;
@@ -211,6 +216,7 @@ section{
             .all-skills-box{
                 width: 100%;
             }
+        }
         }
     }
     .title-box{
