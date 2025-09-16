@@ -35,9 +35,13 @@ section{
                 @include paper(3);
                 background-image: url(../../assets/img/papers/paper1.png);
                 transform: translateY(30px) rotate(-3deg);
+                transition: all 225ms ease-in-out;
+
             }
             .paper-1-moving{
-                transform: translateY(30px) rotate(-2deg);
+                transform: translateY(275px) rotate(-2deg);
+                transition: all 225ms ease-in-out;
+
             }
             .paper-2{
                 background-image: url(../../assets/img/papers/paper3.png);
@@ -45,14 +49,18 @@ section{
             }
             .paper-2-moving{
                 transform: rotate(-1deg);
+                z-index: 7;
             }
             .paper-3{
                 background-image: url(../../assets/img/papers/paper2.png);
                 transform: translateY(-50px) rotate(5deg);
+                transition: all 225ms ease-in-out;
                 @include paper(0);
             }
             .paper-3-moving{
-                transform: translateY(-50px) rotate(2deg);
+                transform: translateY(-283px) rotate(-6deg);
+                z-index: 8;
+                transition: all 225ms ease-in-out;
             }
         }
         
