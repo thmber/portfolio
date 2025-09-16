@@ -81,8 +81,8 @@ section{
                 transform: translate(100px, -250px) rotate(7.7deg);
             }
             img{
-                width: 200px;
-                height: 200px;
+                width: 190px;
+                height: 220px;
                 filter: grayscale(1);
                 transition: all 125ms ease-in-out;
 
@@ -162,7 +162,7 @@ section{
 
 @media only screen and (max-width: 1180px) {
     .hero-image-box{
-        transform: translate(160px, -250px) rotate(8deg) !important;
+        transform: translate(100px, -250px) rotate(8deg) !important;
     }
     .title-developer{
         font-size: 7em !important;
@@ -179,7 +179,7 @@ section{
         transform: translate(50px, -210px) rotate(8deg) !important;
         img{
             width: 160px !important;
-            height: 160px !important;
+            height: 190px !important;
         }
     }
 }
